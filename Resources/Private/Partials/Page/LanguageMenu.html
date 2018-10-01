@@ -1,0 +1,26 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<v:page.languageMenu defaultLanguageLabel="de" defaultLanguageLabel="Deutsch" defaultIsoFlag="de" flagPath="/typo3conf/ext/sitepackage/Resources/Public/Icons/Flags/PNG/" flagImageType="png">
+	<div class="languageMenu">
+		<div class="currentLanguage">
+			<f:for each="{languageMenu}" as="language">
+				<f:if condition="{language.current} == 1">
+					<span class="menu__image"><img src="{language.flagSrc}" width="15" height="15" alt="{language.label}"></span>
+					<span class="menu__label">{language.label}</span>
+				</f:if>
+			</f:for>
+		</div>
+		<ul class="menu menu--language">
+			<f:for each="{languageMenu}" as="language">
+				<li class="menu__item">
+					<a href="{language.url}" class="menu__link{f:if(condition:'{language.current} == 1',then:' menu__link--current')}">
+						<span class="menu__image"><img src="{language.flagSrc}" width="15" height="15" alt="{language.label}"></span>
+						<span class="menu__label">{language.label}</span>
+					</a>
+				</li>
+			</f:for>
+		</ul>
+	</div>
+</v:page.languageMenu>
+
+
+<!--Zum Einbunden, <f:render partial="languageMenu" arguments="{_all}"/>, in die Main.html einfügen-->

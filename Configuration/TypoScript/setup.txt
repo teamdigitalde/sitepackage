@@ -1,0 +1,8 @@
+######################
+## ROOT TypoScripte ##
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sitepackage/Configuration/TypoScript/Helper/root.ts">
+
+## Pfad zur YAML Configuration der EXT:form
+plugin.tx_form.settings.yamlConfigurations.100 = EXT:sitepackage/Configuration/Yaml/BaseSetup.yaml
+module.tx_form.settings.yamlConfigurations.100 = EXT:sitepackage/Configuration/Yaml/BaseSetup.yaml

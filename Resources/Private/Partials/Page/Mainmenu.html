@@ -1,0 +1,41 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<v:menu>
+	<ul class="nav navbar-nav mr-auto">
+		<f:for each="{menu}" as="lvl1" iteration="i">
+			<li class="nav-item level1 x{lvl1.uid}{f:if(condition: '{lvl1.hasSubPages}',then:' dropdown')}{f:if(condition:'{lvl1.current}',then:' active')}{f:if(condition: i.isFirst, then: ' first')}{f:if(condition: i.isLast, then: ' last')}">
+				<a href="{f:uri.page(pageUid:lvl1.uid)}" id="{f:if(condition: '{lvl1.hasSubPages}',then:'navbarDropdown')}" class="{f:if(condition:'{lvl1.active}',then:' is-current')} {f:if(condition: '{lvl1.hasSubPages}',then:'navbarDropdown dropdown-toggle')} nav-link" title="{lvl1.title}">
+					{f:if(condition: '{lvl1.nav_title}',then:'{lvl1.nav_title}',else:'{lvl1.title}')}
+				</a>
+				<!-- Zweite Ebene -->
+				<f:if condition="{lvl1.hasSubPages}">
+					<v:menu pageUid="{lvl1.uid}">
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<f:for each="{menu}" as="lvl2">
+								<li class="level2 x{lvl2.uid} {f:if(condition: '{lvl2.hasSubPages}',then:'dropdown-submenu')}">
+								<a id="{f:if(condition:'{lvl2.hasSubPages}',then:'navbarDropdownMenu')}" class="nav-link {f:if(condition:'{lvl2.active}',then:'active ')}{f:if(condition:'{lvl2.hasSubPages}',then:'dropdown-toggle')}" href="{f:uri.page(pageUid:lvl2.uid)}" title="{lvl2.title}">
+									{f:if(condition: '{lvl2.nav_title}',then:'{lvl2.nav_title}',else:'{lvl2.title}')}
+								</a>
+									<!-- Dritte Ebene -->
+									<f:if condition="{lvl2.hasSubPages}">
+										<v:menu pageUid="{lvl2.uid}">
+											<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+												<f:for each="{menu}" as="lvl3">
+													<li class="level3 x{lvl2.uid} {f:if(condition: '{lvl3.hasSubPages}',then:'dropdown-submenu')}">
+														<a id="{f:if(condition:'{lvl3.hasSubPages}',then:'navbarDropdownMenu')}" class="nav-link {f:if(condition:'{lvl3.active}',then:'active ')}{f:if(condition:'{lvl3.hasSubPages}',then:'dropdown-toggle')}" href="{f:uri.page(pageUid:lvl3.uid)}" title="{lvl3.title}">
+															{f:if(condition: '{lvl3.nav_title}',then:'{lvl3.nav_title}',else:'{lvl3.title}')}
+														</a>
+													</li>
+												</f:for>
+											</ul>
+										</v:menu>
+									</f:if>
+								</li>
+							</f:for>
+						</ul>
+					</v:menu>
+				</f:if>
+			</li>
+		</f:for>
+	</ul>
+</v:menu>
+

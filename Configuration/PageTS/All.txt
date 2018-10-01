@@ -1,0 +1,9 @@
+#
+# PageTS for team digital Kickstart
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sitepackage/Configuration/PageTS/page.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sitepackage/Configuration/PageTS/Extensions/GridElements/PageTS.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sitepackage/Configuration/PageTS/RTE.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sitepackage/Configuration/PageTS/TCEFORM.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sitepackage/Configuration/PageTS/TCEMAIN.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sitepackage/Configuration/PageTS/Mod/WebLayout/BackendLayouts.ts">

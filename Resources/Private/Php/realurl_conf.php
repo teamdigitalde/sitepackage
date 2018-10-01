@@ -50,31 +50,29 @@ $tx_realurl_config = array(
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
 	'realurlconf-anpassen.de' => $tx_realurl_config,
 
-/*	
-'_DOMAINS' => array(
-	'encode' => array(
-		array(
-			'GETvar' => 'L',
-			'value' => '0',
-			'useConfiguration' => 'example.com',
-			'urlPrepend' => 'http://example.de'
-		),
-		array(
-			'GETvar' => 'L',
-			'value' => '1',
-			'useConfiguration' => 'example.com',
-			'urlPrepend' => 'http://example.es'
-		)
-	),
-	'decode' => array(
-		'www.example.com' => array(
-			'GETvars' => array(
-				'L' => '1',
+/*	'_DOMAINS' => array(
+		'encode' => array(
+			array(
+				'GETvar' => 'L',
+				'value' => '0',
+				'useConfiguration' => 'example.com',
+				'urlPrepend' => 'http://example.de'
 			),
+			array(
+				'GETvar' => 'L',
+				'value' => '1',
+				'useConfiguration' => 'example.com',
+				'urlPrepend' => 'http://example.es'
+			)
 		),
-	)
-)
-*/
+		'decode' => array(
+			'www.example.com' => array(
+				'GETvars' => array(
+					'L' => '1',
+				),
+			),
+		)
+	)*/
 );
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurlconf-anpassen.de']['pagePath']['rootpage_id'] = 1;
 ?>

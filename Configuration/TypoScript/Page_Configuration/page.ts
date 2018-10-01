@@ -25,6 +25,8 @@ page {
 			pagets__Layout2.value = EXT:sitepackage/Resources/Private/Templates/Page/Layout2.html
 			pagets__Layout3 = TEXT
 			pagets__Layout3.value = EXT:sitepackage/Resources/Private/Templates/Page/Layout3.html
+			pagets__Layout4 = TEXT
+			pagets__Layout4.value = EXT:sitepackage/Resources/Private/Templates/Page/Layout4.html
 		}
 
 		# fill the subparts and markers

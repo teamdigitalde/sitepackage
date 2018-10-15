@@ -1,45 +1,15 @@
-{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <f:layout name="Main"/>
 <f:section name="Layout4">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8 maincontent">
+                <!--TYPO3SEARCH_begin-->
                 <f:format.html parseFuncTSPath="">{content_col0}</f:format.html>
+                <!--TYPO3SEARCH_end-->
             </div>
             <div class="col-xs-12 col-md-4 sidebar">
                 <div class="sidebarmenu">
-                    <p class="header">{data.title}</p>
-                    <nav class="menu">
-                        <!-- Erste Ebene -->
-                        <v:menu entryLevel="1" levels="2">
-                            <ul>
-                                <f:for each="{menu}" as="item-lvl-1">
-                                    <li class="{f:if(condition:
-									'{item-lvl-1.hasSubPages}',then:'has-subpages',else:'')} {f:if(condition:'{item-lvl-1.current}',then:'current')}">
-                                        <a href="{f:uri.page(pageUid:item-lvl-1.uid)}" class="{f:if(condition:'{item-lvl-1.current}',then:' is-current',else:'')}">
-                                            {item-lvl-1.linktext}
-                                        </a>
-                                        <!-- Zweite Ebene -->
-                                        <f:if condition="{item-lvl-1.active}">
-                                            <v:menu pageUid="{item-lvl-1.uid}">
-                                                <ul>
-                                                    <f:for each="{menu}" as="item-lvl-2">
-                                                        <li
-                                                            {f:if(condition:'{item-lvl-2.hasSubPages}',then:'
-                                                        class="has-subpages"',else:'')}>
-                                                        <a href="{f:uri.page(pageUid:item-lvl-2.uid)}" {f:if(condition:'{item-lvl-2.current}',then:'class="is-current"',else:'')}>
-                                                        <span>{item-lvl-2.linktext}</span>
-                                                        </a>
-                                                        </li>
-                                                    </f:for>
-                                                </ul>
-                                            </v:menu>
-                                        </f:if>
-                                    </li>
-                                </f:for>
-                            </ul>
-                        </v:menu>
-                    </nav>
+                    <f:render partial="Page/Sidebarmenu" arguments="{_all}"/>
                 </div>
                 <f:format.html parseFuncTSPath="">{content_col2}</f:format.html>
             </div>

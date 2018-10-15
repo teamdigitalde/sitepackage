@@ -6,7 +6,7 @@
 				<div class="ce-inner">
 		</f:if>
 		<f:for each="{gallery.rows}" as="row">
-			<div class="ce-row">
+			<div class="ce-row {f:if(condition: '{data.image_zoom}', then: 'magnificGallery')}">
 				<f:for each="{row.columns}" as="column">
 					<f:if condition="{column.media}">
 						<div class="ce-column">
@@ -26,9 +26,9 @@
 								<f:case value="4">
 									<f:render section="videoType" arguments="{_all}" />
 								</f:case>
-								<f:case default="TRUE">
+								<f:defaultCase>
 									<f:render section="imageType" arguments="{_all}" />
-								</f:case>
+								</f:defaultCase>
 							 </f:switch>
 
 							<f:if condition="{column.media.description}">
@@ -64,9 +64,9 @@
 		<f:else>
 			<f:if condition="{data.image_zoom}">
 				<f:then>
-					<ce:link.clickEnlarge image="{column.media}" configuration="{settings.media.popup}">
-						<f:render section="media" arguments="{_all}" />
-					</ce:link.clickEnlarge>
+                    <ce:link.clickEnlarge image="{column.media}" configuration="{settings.media.popup}">
+                        <f:render section="media" arguments="{_all}" />
+                    </ce:link.clickEnlarge>
 				</f:then>
 				<f:else>
 					<f:render section="media" arguments="{_all}" />

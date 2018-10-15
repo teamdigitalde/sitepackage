@@ -1,46 +1,7 @@
 var bodywidth = document.body.clientWidth;
-// Fancybox
-$(document).ready(function() {
-	$('.fancybox').fancybox();
-//	$('.dropdown-submenu > a').submenupicker();
-
-	    // ersetzt das (at) durch @ ohne das für crawler offen zu legen
-    $('a[href*="linkTo_UnCryptMailto"]').each(function() {
-		if(typeof $(this) === 'string'){
-			$(this).text($(this).text().replace('(at)', '@'));
-		}
-    });
-});
-
-// Dropdown mit Slideout
-/*
-$('.navbar .dropdown, .dropdown-submenu ').hover(function() {
-	if(bodywidth >= 720) {
-		$(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-		$(this).find('.dropdown-menu-arrow').first().stop(true, true).delay(250).slideDown();
-	}
-}, function() {
-	if(bodywidth >= 720) {
-		$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
-		$(this).find('.dropdown-menu-arrow').first().stop(true, true).delay(100).slideUp();
-	}
-});
-*/
-
-// Bei der 1. Ebene wird nach einem Klick der Link zur Seite aktiviert
-/*
-$('li.dropdown').on('click', function() {
-    var $el = $(this);
-    if ($el.hasClass('open')) {
-        var $a = $el.children('a.dropdown-toggle');
-        if ($a.length && $a.attr('href')) {
-            location.href = $a.attr('href');
-        }
-    }
-});
-*/
-
-
+window.onresize = function(event) {
+    bodywidth = document.body.clientWidth;
+};
 /* Geschmeitigeres Scrollen von Anchorlinks */
 /*jQuery('a[href*=#]').on('click', function(event){
 	event.preventDefault();
@@ -54,6 +15,12 @@ $('.collapse').on('shown.bs.collapse', function(){
 }).on('hidden.bs.collapse', function(){
 	$(this).parent().find(".accordion-toggle").addClass("collapsed");
 });
+
+//Schließt offenes Accordion bei Öffnung eines anderen Accordions
+//jQuery('.panel-heading').click( function(e) {
+//    jQuery('.collapse').collapse('hide');
+//});
+
 
 // tel: usw. auf dem Desktop nicht verlinken
 $('a[href^="tel:"], a[href^="fax:"], a[href^="sms:"]').click(function() {
@@ -110,14 +77,12 @@ function showToTop() {
     $( "div.totop" ).show( "slow");
     showed = true;
 }
-window.onresize = function(event) {
-    bodywidth = document.body.clientWidth;
-};
 
+// Ganze Box verlinken
 $(document).ready(function () {
-    var boxlink= 'link'; // Klasse des Links einfügen
-    var boxbutton= 'btn-kaestchen-link'; // Klassen des Buttons einfügen
-    var box = 'kaestchen'; // Klasse der Box
+    var boxlink= 'link'; // Klasse des Links einfügen; ohne Klasse(.) oder ID(#)
+    var boxbutton= 'btn-kaestchen-link'; // oder Klassen des Buttons einfügen, wie zum Beispiel Fancybox; ohne Klasse(.) oder ID(#)
+    var box = 'kaestchen'; // Klasse der Box; ohne Klasse(.) oder ID(#)
     jQuery("."+box).click(function() {
         if(jQuery(this).find("a").hasClass(boxlink)) {
             window.location = $(this).find("a").attr("href");
@@ -177,3 +142,62 @@ jQuery.fn.infoboxHoehenAnpassung = function(container,element) {
 	});
 };
 */
+
+jQuery('.magnific').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    closeOnContentClick: false,
+    closeBtnInside: false,
+    mainClass: 'mfp-with-zoom mfp-img-mobile',
+    image: {
+        verticalFit: true,
+        titleSrc: function (item) {
+            //return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+            return item.el.attr('title');
+        }
+    },
+    gallery: {
+        enabled: true
+    },
+    zoom: {
+        enabled: true,
+        duration: 500, // don't foget to change the duration also in CSS
+        opener: function (element) {
+            return element.find('img');
+        }
+    }
+});
+jQuery('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false
+});
+$('.magnificGallery').each(function() { // the containers for all your galleries
+    $(this).magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        closeOnContentClick: false,
+        closeBtnInside: false,
+        mainClass: 'mfp-with-zoom mfp-img-mobile',
+        image: {
+            verticalFit: true,
+            titleSrc: function (item) {
+                //return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+                return item.el.attr('title');
+            }
+        },
+        gallery: {
+            enabled: true
+        },
+        zoom: {
+            enabled: true,
+            duration: 500, // don't foget to change the duration also in CSS
+            opener: function (element) {
+                return element.find('img');
+            }
+        }
+    });
+});

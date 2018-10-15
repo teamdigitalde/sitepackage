@@ -57,7 +57,7 @@ page {
 			20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			20 {
 				special = directory
-				special.value = 6
+				special.value = 24
 				levels = 4
 				includeSpacer = 1
 				as = Topmenu
@@ -65,7 +65,7 @@ page {
 			30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			30 {
 				special = directory
-				special.value = 7
+				special.value = 6
 				levels = 4
 				includeSpacer = 1
 				as = Footermenu
@@ -568,7 +568,7 @@ lib.hreflang {
 // Config
 config {
 	# Display error messages instead of an unreadable errorcode
-	contentObjectExceptionHandler = 0
+	#contentObjectExceptionHandler = 0
 	// Administrator settings
 	admPanel = {$config.adminPanel}
 	debug = {$config.debug}

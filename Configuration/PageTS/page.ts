@@ -1,21 +1,3 @@
-#wo liegen die Backend Layouts?
-TCEFORM.pages.backend_layout.PAGE_TSCONFIG_ID = 13
-TCEFORM.pages.backend_layout_next_level.PAGE_TSCONFIG_ID = 13
-
-# Text -> "Kopie1" entfernen
-TCEMAIN.table.pages.disablePrependAtCopy = 1
-TCEMAIN.table.tt_content.disablePrependAtCopy = 1
-
-# Text -> Kopie einblenden
-TCEMAIN.table.tt_content.disableHideAtCopy = 1
-
-# Set the default label and flag
-mod.SHARED.defaultLanguageLabel = deutsch
-mod.SHARED.defaultLanguageFlag = de
-
-# Show the content element wizard with tabs (for consistency)
-mod.wizards.newContentElement.renderMode = tabs
-
 # Bild und Spalten -> Text mit Bild / Bild / Text Media
 # Bildposition "Oben links"
 mod.wizards.newContentElement.wizardItems.common.elements{
@@ -28,7 +10,7 @@ mod.wizards.newContentElement.wizardItems.common.elements{
     textpic.tt_content_defValues.imagecols = 1
     image.tt_content_defValues.imagecols = 1
     textmedia.tt_content_defValues.imagecols = 1
-    }
+}
 
 TCEFORM {
 	pages {
@@ -38,14 +20,10 @@ TCEFORM {
 			altLabels.1 = Columns left & main
 			altLabels.2 = Columns main & right
 			altLabels.3 = Column main only
+			disabled = 1
 		}
 		# There is no need for the Alias field in page properties when we use RealURL
 		alias.disabled = 1
-	}
-
-	tt_content {
-		# Remove the 'border' option from selectbox 'column' in content records
-		colPos.keepItems = 1,0,2
 	}
 }
 
@@ -79,7 +57,7 @@ TCEFORM.tt_content {
     // Layouts hinzufügen, bestehende entfernen - Anpassungen in page.content.ts
     layout {
 	addItems {
-		#100 = Beispiel 100
+		#100 = Gallery
 		#200 = Beispiel 200
 		}
     altLabels {
@@ -105,30 +83,6 @@ TCEFORM.tt_content {
         ## SectionFrame Select-Feld entfernen
         //disabled = 1
     }
-    // Space Before
-	space_before_class {
-        ## Standard entfernen - je Größe +1em Abstand
-        removeItems = small, extra-small, medium, large, extra-large
-        ## Eigene Klasse hinzufügen - CSS-Klasse "frame-space-before-beispiel1" wird hinzugefügt
-        addItems {
-            Beispiel1 = Beispiel 1
-            Beispiel2 = Beispiel 2
-        }
-        ## Space Before Select-Feld entfernen
-		//disabled = 1
-	}
-    // Space After entfernen
-	space_after_class {
-        ## Standard entfernen - je Größe +1em Abstand
-        removeItems = small, extra-small, medium, large, extra-large
-        ## Eigene Klasse hinzufügen - CSS-Klasse "frame-space-before-beispiel1" wird hinzugefügt
-        addItems {
-            Beispiel1 = Beispiel 1
-            Beispiel2 = Beispiel 2
-        }
-        ## Space After Select-Feld entfernen
-		//disabled = 1
-    }
 }
 
 ### News Einstellungen - tx_news
@@ -149,23 +103,6 @@ TCAdefaults {
 		showinpreview =  1
 	}
 }
-
-# "Save and Preview" for news records
-#TCEMAIN.preview {
-#	tx_news_domain_model_news {
-#		# !!! EDIT PID !!!
-#		previewPageId = 123
-#		useDefaultLanguageRecord = 0
-#		fieldToParameterMap {
-#			uid = tx_news_pi1[news_preview]
-#		}
-#		additionalGetParameters {
-#			tx_news_pi1.controller = News
-#			tx_news_pi1.action = detail
-#		}
-#	}
-#}
-
 
 ### Tabs Container
 tx_gridelements.setup.uebb_bootstrap_tabs_container {
@@ -259,10 +196,9 @@ tx_gridelements.setup.uebb_bootstrap_collapsible_element {
 	}
 }
 
-//RTE.default.preset = sitepackage
-// RTE.config.tt_content.bodytext.preset = sitepackage
-
 RTE.default.preset = sitepackage
 RTE.config.tt_content.bodytext.types.textmedia.preset = sitepackage
 RTE.config.tt_content.bodytext.types.textpic.preset = sitepackage
 RTE.config.tt_content.bodytext.types.text.preset = sitepackage
+
+@import 'EXT:sitepackage/Configuration/PageTS/BackendLayouts/'

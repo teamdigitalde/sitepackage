@@ -4,39 +4,15 @@
 # Defines a few class selectors that can be simply taken as examples by anyone who needs to configure the RTE.
 # This css file is referenced by property RTE.default.contentCSS in the default configuration of htmlArea RTE.
 # ***************************************************************************************/
-
-/* Left, center, right and justify alignment of text in block elements*/
-p.align-left, td.align-left, th.align-left, h1.align-left, h2.align-left, h3.align-left, h4.align-left, h5.align-left, h6.align-left, div.align-left, address.align-left {
-	text-align: left;
-}
-p.align-center, td.align-center, th.align-center, h1.align-center, h2.align-center, h3.align-center, h4.align-center, h5.align-center, h6.align-center, div.align-center, address.align-center {
-	text-align: center;
-}
-p.align-right, td.align-right, th.align-right, h1.align-right, h2.align-right, h3.align-right, h4.align-right, h5.align-right, h6.align-right, div.align-right, address.align-right {
-	text-align: right;
-}
-p.align-justify, td.align-justify, th.align-justify, h1.align-justify, h2.align-justify, h3.align-justify, h4.align-justify, h5.align-justify, h6.align-justify, div.align-justify, address.align-justify {
-	text-align: justify;
-}
-/* Selectors for the default configuration of the link accessibity feature.*/
-a.external-link {
-}
-a.external-link-new-window {
-}
-a.internal-link {
-}
-a.internal-link-new-window {
-}
-a.download {
-}
-a.mail {
-}
-/* Default selector for indentation.*/
-div.indent {
-	margin-left: 2em;
-}
 /* Benutzerdefinierte Style */
-
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+	overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
 html {
 	font-size: 16px;
 }
@@ -85,31 +61,43 @@ hr {
 	margin: 16px 0px 18px;
 	height: 0px;
 }
+.fauxHeadline {
+    font-size: 18px;
+    font-size: 1.125rem;
+}
+.kleiner {
+    font-size: .9em;
+}
+.groesser-125 {
+    font-size: 1.25em;
+}
+.groesser-150 {
+    font-size: 1.5em;
+}
+.gruen {
+    color: #01550e;
+}
+.rot {
+    color: #CC0000;
+}
+.grau {
+    color: #ECECEC;
+}
+#logo {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+a {
+    color: #000;
+}
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
 /* Chrome autofill entfernen */
 input:-webkit-autofill {
-	  -webkit-box-shadow: 0 0 0px 1000px #f8f8fa inset !important;
+	-webkit-box-shadow: 0 0 0px 1000px #f8f8fa inset !important;
 }
-/* Navigation Pipelist */
-.topmenue a {
-	text-decoration: none;
-	color: #242424;
-}
-.topmenue a:hover {
-	text-decoration: none;
-	color: #242424;
-}
-.topmenue li {
-	display: inline;
-	color: #242424;
-}
-.topmenue li:before {
-	content: " | ";
-}
-.topmenue li:first-child:before {
-	content: "";
-}
-/* Naigation Pipelist Ende */
-
 div[role="main"] {
 	margin-bottom: 3em;
 }
@@ -167,25 +155,16 @@ footer.pagefooter {
 	background: #191919;
 	width: 400px;
 }
-/* Kontaktformular ENDE */
-/* Mobil */
 
-@media only screen and (max-width: 767px) {
-	div.csc-textpic-intext-right .csc-textpic-imagewrap, div.csc-textpic-intext-left .csc-textpic-imagewrap, div.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap, div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
-		float: none;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	/* Kontaktformular */
-	.input .form-control {
-		width: 100%;
-	}
-	.next .btn-primary, .submit .btn-primary {
-		margin: 10px 0;
-		width: 100%;
-	}
-	/* Kontaktformular ENDE */
+/* Footer */
+footer h3, footer h2, footer h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
+/* ENDE Footer */
+
+/* Kontaktformular ENDE */
 .totop {
 	background: url('../Images/ic_arrow_drop_down_circle_48px.svg');
 	width: 48px;
@@ -202,169 +181,6 @@ footer.pagefooter {
 	width: 48px;
 	height: 48px;
 }
-/* Cookie-Hinweis */
-div[aria-label='cookieconsent'] {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-div[aria-label='cookieconsent'] .cc-btn {
-	color: rgb(239, 125, 0) !important;
-	border-color: rgb(239, 125, 0) !important;
-	background-color: transparent;
-}
-.cc-banner + .page-header {
-	margin-top: 25px;
-	transition: margin .5s;
-}
-.cc-banner.cc-invisible + .page-header {
-	margin-top: 0px;
-}
-
-#breadcrumblabel {
-	margin-right: 10px;
-}
-@media only screen and (max-width: 991px) {
-	/*Animiertes mobile Toggle and Dropdown-toggle*/
-	.navbar-header .navbar-toggler {
-		position: relative;
-		display: inline-block;
-		width: 40px;
-		height: 40px;
-		vertical-align: middle;
-	}
-	.navbar-header .navbar-toggler::before {
-		content: '';
-		position: absolute;
-		border-bottom: .125rem solid #515151;
-		border-top: .125rem solid #515151;
-		-webkit-transition: .3s ease transform;
-		transition: .3s ease transform;
-		margin: auto;
-		bottom: 10px;
-		top: 10px;
-		right: 0;
-		left: 0;
-		width: 70%;
-	}
-	.navbar-header .navbar-toggler::after {
-		content: '';
-		position: absolute;
-		display: block;
-		-webkit-transition: .3s ease transform;
-		transition: .3s ease transform;
-		height: .125rem;
-		background-color: #515151;
-		margin: auto;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		top: 0;
-		width: 70%;
-	}
-	.navbar-header .navbar-toggler.toggled::before {
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
-		bottom: 0;
-		display: block;
-		top: 0;
-		height: 2px;
-		background-color: #515151;
-		border: none;
-	}
-	.navbar-header .navbar-toggler.toggled::after {
-		-webkit-transform: rotate(315deg);
-		transform: rotate(315deg);
-	}
-	a.dropdown-toggle {
-		position: relative;
-	}
-	.dropdown-toggle::before {
-		position: absolute;
-		content: '';
-		display: block;
-		background: #000;
-		margin: auto;
-		bottom: 12px;
-		width: 1px;
-		right: 20px;
-		top: 12px;
-		-webkit-transition: -webkit-transform .3s ease;
-		transition: -webkit-transform .3s ease;
-		transition: transform .3s ease, -webkit-transform .3s ease;
-		height: 17px;
-	}
-	.dropdown-toggle::before {
-		-webkit-transform: rotate(90deg);
-		transform: rotate(90deg);
-	}
-	.dropdown-toggle::after {
-		position: absolute;
-		content: '';
-		display: block;
-		background: #000;
-		margin: auto;
-		bottom: 12px;
-		width: 1px;
-		right: 20px;
-		top: 12px;
-		-webkit-transition: -webkit-transform .3s ease;
-		transition: -webkit-transform .3s ease;
-		transition: transform .3s ease, -webkit-transform .3s ease;
-		border: none;
-		height: 17px;
-	}
-	.show > .dropdown-toggle::before {
-		-webkit-transform: rotate(45deg) translate(8px);
-		transform: rotate(45deg) translate(8px);
-	}
-	.show > .dropdown-toggle::after {
-		-webkit-transform: rotate(135deg) translate(8px);
-		transform: rotate(135deg) translate(8px);
-	}
-	.row.row-offcanvas {
-		max-height: 100%;
-		overflow-y: auto;
-	}
-	/* Ende animiertes Navtoggle */
-}
-
-/* Sprachmenu / Language */
-.menu.menu--language {
-	display: none;
-}
-.currentLanguage::before {
-	content: '|';
-	left: 8px;
-	position: absolute;
-}
-.currentLanguage {
-	padding-left: 24px;
-	position: relative;
-	cursor: pointer;
-}
-.languageMenu {
-	display: inline-block;
-	position: relative;
-}
-.menu.menu--language {
-	display: none;
-	position: absolute;
-	background: #fff;
-	padding-left: 20px;
-	padding-right: 20px;
-	z-index: 9999;
-	left: 0;
-	top: 120%;
-	margin-bottom: 0;
-	width: 150px;
-	border: 1px solid #000;
-	border-radius: 5px;
-	list-style: none;
-}
-.menu__item {
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
 
 figcaption.align-center {
 	text-align: center;
@@ -375,3 +191,24 @@ figcaption.align-left {
 figcaption.align-right {
 	text-align: right;
 }
+
+/* Mobil */
+
+@media only screen and (max-width: 767px) {
+	.ce-textpic, .ce-image, .ce-nowrap .ce-bodytext, .ce-gallery, .ce-row, .ce-uploads li, .ce-uploads div {
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	/* Kontaktformular */
+	.input .form-control {
+		width: 100%;
+	}
+	.next .btn-primary, .submit .btn-primary {
+		margin: 10px 0;
+		width: 100%;
+	}
+	/* Kontaktformular ENDE */
+}
+
+/* ENDE Mobil */

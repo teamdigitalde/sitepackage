@@ -1,46 +1,3 @@
-#imports:
-#    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
-#    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
-#    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-#
-#editor:
-#    config:
-#        contentsCss: "EXT:sitepackage/Resources/Public/Css/rte.css"
-#
-#        stylesSet:
-#            - { name: "Lead", element: "p", attributes: { 'class': 'lead' } }
-#
-#        toolbarGroups:
-#            - { name: styles, groups: [ format, styles ] }
-#            - { name: basicstyles, groups: [ basicstyles ] }
-#            - { name: paragraph, groups: [ list, indent, blocks, align ] }
-#            - "/"
-#            - { name: links, groups: [ links ] }
-#            - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
-#            - { name: editing, groups: [ spellchecker ] }
-#            - { name: insert, groups: [ insert ] }
-#            - { name: tools, groups: [ table, specialchar ] }
-#            - { name: document, groups: [ mode ] }
-#
-#        format_tags: "p;h1;h2;h3;h4;h5;pre"
-#
-#        justifyClasses:
-#            - text-left
-#            - text-center
-#            - text-right
-#            - text-justify
-#
-#        extraPlugins:
-#            - justify
-#
-#        removePlugins:
-#            - image
-#
-#        removeButtons:
-#            - Anchor
-#            - Underline
-#            - Strike
-
 imports:
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
@@ -51,7 +8,8 @@ editor:
   externalPlugins:
       youtube: { resource: "EXT:sitepackage/Resources/Public/Plugins/youtube/plugin.js" }
   config:
-    contentsCss: "EXT:sitepackage/Resources/Public/Css/rte.css"
+    # Den Parameter 1 immer hochsetzen, wenn sich in der rte.css etwas ändert.
+    contentsCss: "EXT:sitepackage/Resources/Public/Css/rte.css?1"
     stylesSet:
 
       # Blockstile
@@ -62,22 +20,6 @@ editor:
       - { name: "Text: Grün ", element: "p", attributes: { 'class': 'gruen' } }
       - { name: "Text: Grau ", element: "p", attributes: { 'class': 'grau' } }
 
-      # Buttons
-      #- { name: "Button Default", element: "a", attributes: { 'class': 'btn btn-default' } }
-      #- { name: "Button Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
-      #- { name: "Button Success", element: "a", attributes: { 'class': 'btn btn-success' } }
-      #- { name: "Button Info", element: "a", attributes: { 'class': 'btn btn-info' } }
-      #- { name: "Button Warning", element: "a", attributes: { 'class': 'btn btn-warning' } }
-      #- { name: "Button Danger", element: "a", attributes: { 'class': 'btn btn-danger' } }
-
-      # Labels
-      #- { name: "Label Default", element: "span", attributes: { 'class': 'label label-default' } }
-      #- { name: "Label Primär", element: "span", attributes: { 'class': 'label label-primary' } }
-      #- { name: "Label Erfolg", element: "span", attributes: { 'class': 'label label-success' } }
-      #- { name: "Label Info", element: "span", attributes: { 'class': 'label label-info' } }
-      #- { name: "Label Warning", element: "span", attributes: { 'class': 'label label-warning' } }
-      #- { name: "Label danger", element: "span", attributes: { 'class': 'label label-danger' } }
-
       # Textstile
       - { name: "Kleiner Text inline", element: "span", attributes: { 'class': 'small' } }
       - { name: "Text: 125%", element: "span", attributes: { 'class': 'groesser-125' } }
@@ -87,10 +29,6 @@ editor:
       - { name: "Text: Grau", element: "span", attributes: { 'class': 'grau' } }
       - { name: "Zitat rechts ausgerichtet", element: "blockquote" ,attributes: { 'class': 'blockquote-reverse' }}
 
-      # Listen
-      #- { name: 'Ohne Gestaltung', element: 'ul', attributes: { 'class': 'list-unstyled' } }
-      #- { name: 'Inline', element: 'ul', attributes: { 'class': 'list-inline' } }
-      #- { name: 'Keine UL Bullets', element: 'ul', attributes: { 'class': 'no-bullet' } }
     toolbarGroups:
       - { name: clipboard, groups: [clipboard, undo] }
       - { name: editing,   groups: [find, selection, spellchecker] }

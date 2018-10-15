@@ -17,7 +17,7 @@ finishers:
       carbonCopyAddress: ''
       blindCarbonCopyAddress: ''
       format: html
-      attachUploads: 'false'
+      attachUploads: false
     identifier: EmailToSender
   -
     options:

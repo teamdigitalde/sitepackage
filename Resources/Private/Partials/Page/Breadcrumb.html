@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb" aria-labelledby="breadcrumblabel" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li id="breadcrumblabel">Sie sind hier:</li>
+        <f:for each="{Breadcrumb}" as="b" iteration="i">
+            <li class="{f:if(condition: '{i.isFirst}', then:'first ')}breadcrumb-item" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <f:link.typolink parameter="{b.link}" additionalAttributes="{itemprop:'url'}" title="Zurück zu: {b.title}">
+                    <span itemprop="title">{b.title}</span>
+                </f:link.typolink>
+            </li>
+        </f:for>
+    </ol>
+</nav>

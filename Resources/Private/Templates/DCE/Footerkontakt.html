@@ -1,0 +1,19 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<div class="dce">
+    <div itemscope itemtype="http://schema.org/Organization">
+        <p>
+            <strong><span itemprop="name">{fields.name}</span></strong>
+        </p>
+        <p>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="streetAddress">{fields.strasse}</span><br>
+                <span itemprop="postalCode">{fields.plz}</span> {fields.city}<br>
+            </div>
+            Tel: <span itemprop="telephone">{fields.tel}</span><br>
+            Fax: <span itemprop="faxNumber">{fields.fax}</span>
+        </p>
+        <p>
+            E-Mail: <a href="mailto:{fields.email}"><span itemprop="email">{fields.email}</span></a>
+        </p>
+    </div>
+</div>

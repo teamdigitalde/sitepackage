@@ -34,6 +34,10 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Core\\Resource\\FileR
 );
 \FluidTYPO3\Flux\Core::registerTemplateAsContentType(
     'TeamDigital.sitepackage',
+    'EXT:sitepackage/Resources/Private/Templates/Content/33-33-33.html'
+);
+\FluidTYPO3\Flux\Core::registerTemplateAsContentType(
+    'TeamDigital.sitepackage',
     'EXT:sitepackage/Resources/Private/Templates/Content/100.html'
 );
 

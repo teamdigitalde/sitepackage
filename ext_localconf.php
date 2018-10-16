@@ -52,3 +52,9 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Core\\Resource\\FileR
     'TeamDigital.sitepackage',
     'EXT:sitepackage/Resources/Private/Templates/Content/Tabs_Item.html'
 );
+
+// Customcontent
+\FluidTYPO3\Flux\Core::registerTemplateAsContentType(
+    'TeamDigital.sitepackage',
+    'EXT:sitepackage/Resources/Private/Templates/Content/Youtube.html'
+);

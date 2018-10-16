@@ -19,7 +19,7 @@ config {
   debug = 0
 
   #cat=config; type=string; label=Domain name for Base URL: (excluding slashes and protocol like http://)
-  domain = typo9.tim-bueschken.de
+  domain = installscript.tim-bueschken.de
 }
 #[globalString = IENV:HTTP_HOST=baseurl2-anpassen.de]
 #  config.domain = baseurl2-anpassen.de

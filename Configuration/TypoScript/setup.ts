@@ -57,7 +57,7 @@ page {
 			20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			20 {
 				special = directory
-				special.value = 24
+				special.value = 6
 				levels = 4
 				includeSpacer = 1
 				as = Topmenu
@@ -65,7 +65,7 @@ page {
 			30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			30 {
 				special = directory
-				special.value = 6
+				special.value = 7
 				levels = 4
 				includeSpacer = 1
 				as = Footermenu

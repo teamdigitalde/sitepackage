@@ -1,0 +1,37 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="de"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+    
+    <f:layout name="Flux/Content"/>
+    
+    <f:section name="Configuration">
+        <flux:form id="Accordion" label="Accordionelement" description="Accordionelement" options="{group: 'Rasterelemente'}">
+            <flux:form.option.icon value="EXT:sitepackage/Resources/Public/Images/Grids/grid_standard.png"/>
+            <flux:field.input name="Titel" label="Titel" placeholder="Titel des Accordions"/>
+            <flux:grid>
+                <flux:grid.row>
+                    <flux:grid.column colPos="0" label="Inhalt" style="width: 100%;"/>
+                </flux:grid.row>
+            </flux:grid>
+        </flux:form>
+    </f:section>
+    
+    <f:section name="Main">
+        <div id="collapsible-{record.uid}" class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                        <a href="" class="accordion-toggle collapsed" href="/collapse-{record.uid}" data-target="#collapse-{record.uid}" data-toggle="collapse" data-parent="#collapsible-93" aria-expanded="false">
+                            {Titel}
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="collapse-{record.uid}">
+                    <div class="panel-body">
+                        <flux:content.render area="0"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:section>
+</div>

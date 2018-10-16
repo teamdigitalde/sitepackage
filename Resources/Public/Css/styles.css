@@ -212,3 +212,12 @@ figcaption.align-right {
 }
 
 /* ENDE Mobil */
+
+/* flux - Tabs */
+.frame-type-sitepackage_tabs_item > header {
+    display: none;
+}
+.nav.nav-tabs > li {
+    list-style: none;
+}
+/* ENDE flux - Tabs */

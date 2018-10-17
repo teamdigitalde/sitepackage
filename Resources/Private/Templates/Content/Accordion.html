@@ -4,10 +4,6 @@
     
     <f:layout name="Flux/Content"/>
     
-    <f:section name="Preview">
-        <b>Accordion</b>
-    </f:section>
-    
     <f:section name="Configuration">
         <flux:form id="Accordion" label="Accordionelement" description="Accordionelement" options="{group: 'Rasterelemente'}">
             <flux:form.option.icon value="EXT:sitepackage/Resources/Public/Images/Grids/grid_standard.png"/>
@@ -20,12 +16,16 @@
         </flux:form>
     </f:section>
     
+    <f:section name="Preview">
+        <b>Accordion: {Titel}</b>
+    </f:section>
+    
     <f:section name="Main">
         <div id="collapsible-{record.uid}" class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
                     <h4 class="panel-title">
-                        <a href="" class="accordion-toggle collapsed" href="/collapse-{record.uid}" data-target="#collapse-{record.uid}" data-toggle="collapse" data-parent="#collapsible-93" aria-expanded="false">
+                        <a href="" class="accordion-toggle collapsed" href="/collapse-{record.uid}" data-target="#collapse-{record.uid}" data-toggle="collapse" data-parent="#collapsible-{record.uid}" aria-expanded="false">
                             {Titel}
                         </a>
                     </h4>

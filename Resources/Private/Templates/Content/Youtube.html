@@ -5,12 +5,16 @@
     <f:layout name="Flux/Content"/>
     
     <f:section name="Configuration">
-        <flux:form id="Youtube" label="Youtube Video" description="Binde einen Youtube iFrame ein" options="{group: 'Specialelements'}">
+        <flux:form id="Youtube" label="Youtube Video" description="Binde einen Youtube iFrame ein" options="{group: 'Customcontents'}">
             <flux:form.option.icon value="EXT:sitepackage/Resources/Public/Plugins/youtube/images/icon.png"/>
             
             <flux:field.input name="iframe" label="Youtube iFrame"/>
-            <flux:field.input name="breite" label="Breite des Frames"/>
-            <flux:field.input name="hoehe" label="Höhe des Frames"/>
+            <flux:field.select label="Seitenverhältnis auswählen" name="verhaeltnis" items="{
+                           0:{0:'21/9',1:'embed-responsive-21by9'},
+                           1:{0:'16/9',1:'embed-responsive-16by9'},
+                           2:{0:'4/3',1:'embed-responsive-4by3'},
+                           3:{0:'1/1',1:'embed-responsive-1by1'}
+                           }"/>
         </flux:form>
     </f:section>
     
@@ -19,8 +23,8 @@
     </f:section>
     
     <f:section name="Main">
-        <div class="embed-responsive embed-responsive-1by1">
-            <iframe class="embed-responsive-item" src="{iframe}" style="width:{breite}px; height:{hoehe}px; max-width:100%; max-height:auto;" allowfullscreen></iframe>
+        <div class="embed-responsive {verhaeltnis}">
+            <iframe class="embed-responsive-item" src="{iframe}" allowfullscreen></iframe>
         </div>
     </f:section>
 </div>

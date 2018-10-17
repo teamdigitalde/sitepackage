@@ -1,3 +1,145 @@
+// Libs
+lib.renderCE = RECORDS
+lib.renderCE {
+	source.current = 1
+	tables = tt_content
+}
+
+
+lib.contentElement.variables.10 = LOAD_REGISTER
+lib.contentElement.variables.10.content_uid = TEXT
+lib.contentElement.variables.10.content_uid.field = uid
+lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" data-gallery="gallery-{register:content_uid}"
+lib.contentElement.stdWrap.append = RESTORE_REGISTER
+
+# Neue Layouts Hinzufügen
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+	key.field = layout
+	100 = TEXT
+	100.value = <div class="example1">|</div>
+	200 = TEXT
+	200.value = <div class="example2">|</div>
+}
+
+### Einbindung headerbild / Headerslider ###
+lib.headerslideshow < styles.content.get
+lib.headerslideshow {
+	select.where = colPos=3
+	stdWrap.required = 1
+	slide = -1
+}
+
+lib.backend_layout = TEXT
+lib.backend_layout {
+	data = levelfield:-1, backend_layout_next_level, slide
+	override.field = backend_layout
+}
+
+lib.layoutSwitch < lib.backend_layout
+lib.layoutSwitch.wrap = layout|
+
+
+# BODY-Tag CSS Klasse Seiten PID ###############################
+lib.sitepid = COA
+lib.sitepid {
+	5 = HMENU
+	5 {
+		special = rootline
+		special.range = 1|-1
+		includeNotInMenu = 1
+		1 = TMENU
+		1 {
+			NO {
+				doNotLinkIt = 1
+				doNotShowLink = 0
+				allStdWrap.cObject = COA
+				allStdWrap.cObject {
+					5 = TEXT
+					5 {
+						noTrimWrap = | uid_| |
+						field = uid
+					}
+				}
+			}
+		}
+	}
+}
+
+# BODY-Tag erstellen ###############################
+lib.bodyTag = COA
+lib.bodyTag {
+	5 = TEXT
+	5.dataWrap = <body id="p{TSFE:id}" class="
+	# === insert layout switch (page|backend_layout)
+	10 < lib.layoutSwitch
+	15 < lib.sitepid
+	20 = TEXT
+	20.value = ">
+}
+
+lib.canonical = TEXT
+lib.canonical {
+	typolink {
+		parameter.cObject = COA
+		parameter.cObject {
+			5 = TEXT
+			5.data = TSFE:page|content_from_pid
+			5.if.isTrue.data = TSFE:page|content_from_pid
+			10 = TEXT
+			10.data = TSFE:id
+			10.if.isFalse.data = TSFE:page|content_from_pid
+		}
+
+		forceAbsoluteUrl = 1
+		returnLast = url
+		useCacheHash = 1
+		additionalParams < lib.currentUrl.10.typolink.additionalParams
+	}
+
+	wrap = <link rel="canonical" href="|" />
+}
+
+lib.hreflang = HMENU
+lib.hreflang {
+	special = language
+	special.value = 0,1,2
+	1 = TMENU
+	1 {
+		# Link zu nicht-aktiven Sprachen anzeigen
+		NO = 1
+		NO {
+			stdWrap.cObject = TEXT
+			stdWrap.cObject.value = de || en || fr
+			linkWrap = <link rel="alternate" hreflang="|
+			doNotLinkIt = 1
+			after.cObject = TEXT
+			after.cObject {
+				stdWrap {
+					wrap = " href="|" />
+					typolink {
+						parameter.data = TSFE:id
+						returnLast = url
+						forceAbsoluteUrl = 0
+						additionalParams < lib.currentUrl.10.typolink.additionalParams
+						additionalParams.cObject.1 = TEXT
+						additionalParams.cObject.1.value = &L=0 || &L=1 || &L=2
+					}
+				}
+			}
+		}
+
+		# Link zur gerade aktiven Sprache NICHT anzeigen
+		#ACT = 1
+		#ACT.doNotShowLink = 1
+		# Link zu fehlenden Übersetzungen NICHT anzeigen
+		USERDEF1 = 1
+		USERDEF1.doNotShowLink = 1
+	}
+
+	if.isTrue = {$headerData.hreflang.active}
+}
+
 # Make the PAGE object
 page = PAGE
 page {
@@ -389,149 +531,6 @@ alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Web
 			}
 		}
 	}
-}
-
-// Libs
-lib.renderCE = RECORDS
-lib.renderCE {
-	source.current = 1
-	tables = tt_content
-}
-
-
-lib.contentElement.variables.10 = LOAD_REGISTER
-lib.contentElement.variables.10.content_uid = TEXT
-lib.contentElement.variables.10.content_uid.field = uid
-lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" data-gallery="gallery-{register:content_uid}"
-lib.contentElement.stdWrap.append = RESTORE_REGISTER
-
-# Neue Layouts Hinzufügen
-tt_content.stdWrap.innerWrap.cObject = CASE
-tt_content.stdWrap.innerWrap.cObject {
-	key.field = layout
-	100 = TEXT
-	100.value = <div class="example1">|</div>
-	200 = TEXT
-	200.value = <div class="example2">|</div>
-}
-
-### Einbindung headerbild / Headerslider ###
-lib.headerslideshow < styles.content.get
-lib.headerslideshow {
-	select.where = colPos=3
-	stdWrap.required = 1
-	slide = -1
-}
-
-lib.backend_layout = TEXT
-lib.backend_layout {
-	data = levelfield:-1, backend_layout_next_level, slide
-	override.field = backend_layout
-}
-
-lib.layoutSwitch < lib.backend_layout
-lib.layoutSwitch.wrap = layout|
-
-
-# BODY-Tag CSS Klasse Seiten PID ###############################
-lib.sitepid = COA
-lib.sitepid {
-	5 = HMENU
-	5 {
-		special = rootline
-		special.range = 1|-1
-		includeNotInMenu = 1
-		1 = TMENU
-		1 {
-			NO {
-				doNotLinkIt = 1
-				doNotShowLink = 0
-				allStdWrap.cObject = COA
-				allStdWrap.cObject {
-					5 = TEXT
-					5 {
-						field = uid
-					}
-
-					10.noTrimWrap = | uid_| |
-				}
-			}
-		}
-	}
-}
-
-# BODY-Tag erstellen ###############################
-lib.bodyTag = COA
-lib.bodyTag {
-	5 = TEXT
-	5.dataWrap = <body id="p{TSFE:id}" class="
-	# === insert layout switch (page|backend_layout)
-	10 < lib.layoutSwitch
-	15 < lib.sitepid
-	20 = TEXT
-	20.value = ">
-}
-
-lib.canonical = TEXT
-lib.canonical {
-	typolink {
-		parameter.cObject = COA
-		parameter.cObject {
-			5 = TEXT
-			5.data = TSFE:page|content_from_pid
-			5.if.isTrue.data = TSFE:page|content_from_pid
-			10 = TEXT
-			10.data = TSFE:id
-			10.if.isFalse.data = TSFE:page|content_from_pid
-		}
-
-		forceAbsoluteUrl = 1
-		returnLast = url
-		useCacheHash = 1
-		additionalParams < lib.currentUrl.10.typolink.additionalParams
-	}
-
-	wrap = <link rel="canonical" href="|" />
-}
-
-lib.hreflang = HMENU
-lib.hreflang {
-	special = language
-	special.value = 0,1,2
-	1 = TMENU
-	1 {
-		# Link zu nicht-aktiven Sprachen anzeigen
-		NO = 1
-		NO {
-			stdWrap.cObject = TEXT
-			stdWrap.cObject.value = de || en || fr
-			linkWrap = <link rel="alternate" hreflang="|
-			doNotLinkIt = 1
-			after.cObject = TEXT
-			after.cObject {
-				stdWrap {
-					wrap = " href="|" />
-					typolink {
-						parameter.data = TSFE:id
-						returnLast = url
-						forceAbsoluteUrl = 0
-						additionalParams < lib.currentUrl.10.typolink.additionalParams
-						additionalParams.cObject.1 = TEXT
-						additionalParams.cObject.1.value = &L=0 || &L=1 || &L=2
-					}
-				}
-			}
-		}
-
-		# Link zur gerade aktiven Sprache NICHT anzeigen
-		#ACT = 1
-		#ACT.doNotShowLink = 1
-		# Link zu fehlenden Übersetzungen NICHT anzeigen
-		USERDEF1 = 1
-		USERDEF1.doNotShowLink = 1
-	}
-
-	if.isTrue = {$headerData.hreflang.active}
 }
 
 ## Über die Condition wird erreicht, dass der Code nur dann ausgeführt wird,

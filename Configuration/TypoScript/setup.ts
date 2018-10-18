@@ -57,14 +57,20 @@ lib.sitepid {
 				allStdWrap.cObject {
 					5 = TEXT
 					5 {
-						noTrimWrap = | uid_| |
 						field = uid
 					}
+
+					10.noTrimWrap = | uid_| |
 				}
 			}
 		}
 	}
 }
+
+# Aktuelle SeitenID im Frontend auslesen
+lib.currentPid = TEXT
+lib.currentPid.value = {TSFE:id}
+lib.currentPid.insertData = 1
 
 # BODY-Tag erstellen ###############################
 lib.bodyTag = COA
@@ -173,8 +179,8 @@ page {
 
 		# fill the subparts and markers
 		variables {
-			# Insert headerslideshow
-			headerslideshow < lib.headerslideshow
+			# Current Pid
+			currentPid < lib.currentPid
 
 			# Insert content as already constructed in TypoScript objects into subparts
 			content_col0 < styles.content.get

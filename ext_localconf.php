@@ -9,6 +9,11 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['sitepackage'] = 'EXT:sitepackage/
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Core\\Resource\\FileReference'] = array(
     'className' => 'TeamDigital\\Sitepackage\\Resource\\FileReference'
 );
+// RTE with Sitepackage Presets
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['FluidTYPO3\\Flux\\Form\\Field\\Text'] = array(
+    'className' => 'TeamDigital\\Sitepackage\\Form\\Fields\\Text'
+);
+
 
 // Flux Elemente
 // Rasterelemente

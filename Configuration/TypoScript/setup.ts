@@ -438,13 +438,7 @@ alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Web
 
 	// includeCSS
 	includeCSS {
-		5 = {$filepaths.css}bootstrap.min.css
-		10 = {$filepaths.css}bootstrap-grid.min.css
-		15 = {$filepaths.css}bootstrap-reset.css
-		25 = {$filepaths.css}navigation.css
-		30 = {$filepaths.css}jquery.cookiebar.css
-		35 = {$filepaths.css}magnific_popup.css
-		295 = {$filepaths.css}styles.css
+		295 = {$filepaths.css}style.css
 		300 = {$filepaths.css}print.css
 		300.media = print
 	}

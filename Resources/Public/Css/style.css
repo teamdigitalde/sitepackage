@@ -11346,6 +11346,15 @@ body a:hover {
   color: #000;
   text-decoration: underline;
 }
+body .bg-grey {
+  background-color: #ccc;
+}
+body .bg-white {
+  background-color: #fff;
+}
+body .bg-black {
+  background-color: #000;
+}
 body input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #f8f8fa inset !important;
 }

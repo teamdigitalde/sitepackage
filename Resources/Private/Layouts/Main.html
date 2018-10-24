@@ -33,14 +33,14 @@
 		</nav>
 	</div>
 </header>
+<div class="slider">
+  <f:cObject typoscriptObjectPath="lib.headerslideshow" />
+</div>
 <f:if condition="{currentPid} > '1'">
     <div class="container">
         <f:render partial="Page/Breadcrumb" arguments="{_all}"></f:render>
     </div>
 </f:if>
-<div class="slider">
-  <f:cObject typoscriptObjectPath="lib.headerslideshow" />
-</div>
 <div role="main">
 	<div class="row" id="content">
         <f:switch expression="{backend_layout}">

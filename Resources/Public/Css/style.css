@@ -10885,23 +10885,26 @@ body footer ul.footermenu {
   padding-left: 8px;
 }
 body footer ul.footermenu li {
-  list-style: '»';
+  list-style: none;
+  position: relative;
 }
 body footer ul.footermenu li a {
   transition: padding-left 0.3s;
   padding-left: 5px;
+  color: #000;
+  text-decoration: none;
 }
 body footer ul.footermenu li a:hover {
   padding-left: 10px;
   transition: padding-left 0.3s;
-}
-body footer ul.footermenu li a {
   color: #000;
   text-decoration: none;
 }
-body footer ul.footermenu li a:hover {
-  color: #000;
-  text-decoration: none;
+body footer ul.footermenu li::before {
+  content: '»';
+  position: absolute;
+  left: -9px;
+  top: calc((100% - 16px) / 2);
 }
 body .menu.menu--language {
   display: none;

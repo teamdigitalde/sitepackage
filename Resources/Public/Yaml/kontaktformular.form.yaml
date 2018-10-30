@@ -21,7 +21,7 @@ finishers:
     identifier: EmailToSender
   -
     options:
-      pageUid: '14'
+      pageUid: '11'
       additionalParameters: ''
     identifier: Redirect
 renderables:

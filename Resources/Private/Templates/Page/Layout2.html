@@ -2,10 +2,10 @@
 <f:section name="Layout2">
 	<div class="col-xs-12 col-md-8 col-sm-8 maincontent">
         <!--TYPO3SEARCH_begin-->
-            <f:format.html parseFuncTSPath="">{content_col0}</f:format.html>
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
         <!--TYPO3SEARCH_end-->
 	</div>
 	<div class="col-xs-12 col-md-4 col-sm-4 sidebar">
-		<f:format.html parseFuncTSPath="">{content_col2}</f:format.html>
+		<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '2'}" />
 	</div>
 </f:section>

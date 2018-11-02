@@ -11488,16 +11488,25 @@ body .nav.nav-tabs > li {
     float: left;
     width: 100%;
     padding: 1em;
+    overflow: hidden;
+    display: flex;
   }
-  table tbody tr td::before {
+  table tbody tr td .responsive-table_left-content {
+    flex: 0 0 40%;
+  }
+  table tbody tr td .responsive-table_left-content::before {
     content: attr(data-label);
     background: #eee;
     border-right: 2px solid black;
-    width: 45%;
+    width: 100%;
     float: left;
     padding: 1em;
     font-weight: bold;
     margin: -10px;
+  }
+  table tbody tr td .responsive-table_right-content {
+    flex: 0 0 60%;
+    overflow: hidden;
   }
   /* Kontaktformular ENDE */
 }

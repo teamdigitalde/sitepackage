@@ -255,16 +255,26 @@ body {
                     float: left;
                     width: 100%;
                     padding: 1em;
+                    overflow: hidden;
+                    display: flex;
 
-                    &::before {
-                        content: attr(data-label);
-                        background: #eee;
-                        border-right: 2px solid black;
-                        width: 45%;
-                        float: left;
-                        padding: 1em;
-                        font-weight: bold;
-                        margin: -10px;
+                    .responsive-table_left-content {
+                        flex: 0 0 40%;
+
+                        &::before {
+                            content: attr(data-label);
+                            background: #eee;
+                            border-right: 2px solid black;
+                            width: 100%;
+                            float: left;
+                            padding: 1em;
+                            font-weight: bold;
+                            margin: -10px;
+                        }
+                    }
+                    .responsive-table_right-content {
+                        flex: 0 0 60%;
+                        overflow: hidden;
                     }
                 }
             }

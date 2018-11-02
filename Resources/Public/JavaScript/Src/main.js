@@ -213,7 +213,9 @@ jQuery(window).load(function() {
 
             var td = 0;
             jQuery(this).find("td").each(function() {
-                jQuery(this).attr("data-label",labels[td]);
+                jQuery(this).wrapInner('<div class="responsive-table_right-content"></div>');
+                jQuery('<div class="responsive-table_left-content"></div>').prependTo(this);
+                jQuery(this).find(".responsive-table_left-content").attr("data-label",labels[td]);
                 td++;
             });
         });

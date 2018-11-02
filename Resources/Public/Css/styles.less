@@ -240,6 +240,36 @@ body {
         margin: 10px 0;
         width: 100%;
     }
+    table {
+        thead {
+            display: none;
+        }
+        tbody {
+
+            tr {
+                float: left;
+                width: 100%;
+                margin-bottom: 2em;
+
+                td {
+                    float: left;
+                    width: 100%;
+                    padding: 1em;
+
+                    &::before {
+                        content: attr(data-label);
+                        background: #eee;
+                        border-right: 2px solid black;
+                        width: 45%;
+                        float: left;
+                        padding: 1em;
+                        font-weight: bold;
+                        margin: -10px;
+                    }
+                }
+            }
+        }
+    }
     /* Kontaktformular ENDE */
 }
 

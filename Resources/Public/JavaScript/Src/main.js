@@ -201,3 +201,21 @@ $('.magnificGallery').each(function() { // the containers for all your galleries
         }
     });
 });
+
+// Responsive Table
+jQuery(window).load(function() {
+    jQuery('table').each(function() {
+        var labels = [];
+        jQuery(this).find("thead tr th").each(function() {
+            labels.push(jQuery(this).text());
+        });
+        jQuery(this).find("tbody tr").each(function() {
+
+            var td = 0;
+            jQuery(this).find("td").each(function() {
+                jQuery(this).attr("data-label",labels[td]);
+                td++;
+            });
+        });
+    });
+});

@@ -283,6 +283,8 @@ page {
 			# Current Pid
 			currentPid < lib.currentPid
 			currentLanguage < lib.currentLanguage
+			backend_layout < lib.backend_layout
+			layoutclass < lib.layoutSwitch
 
 			# Insert content as already constructed in TypoScript objects into subparts
 			#content_col0 < styles.content.get

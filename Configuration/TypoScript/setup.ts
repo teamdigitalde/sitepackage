@@ -60,9 +60,8 @@ lib.sitepid {
 					5 = TEXT
 					5 {
 						field = uid
+						noTrimWrap = | uid_| |
 					}
-
-					10.noTrimWrap = | uid_| |
 				}
 			}
 		}

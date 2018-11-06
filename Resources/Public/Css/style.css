@@ -11481,6 +11481,20 @@ body .nav.nav-tabs > li {
     max-width: 100%;
     width: 100%;
   }
+  body #content .actions .form-navigation {
+    width: 100%;
+  }
+  body #content .actions .form-navigation .btn-toolbar {
+    width: 100%;
+  }
+  body #content .actions .form-navigation .btn-toolbar .btn-group {
+    width: 100%;
+  }
+  body #content .actions .form-navigation .btn-toolbar .btn-group button {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
   body table.contenttable thead {
     display: none;
   }

@@ -11474,6 +11474,7 @@ body .schwarzTransparenterHintergrund.active {
   -ms-transition: width 0.5s, background 0.5s;
   -o-transition: width 0.5s, background 0.5s;
   transition: width 0.5s, background 0.5s;
+  position: fixed;
 }
 /* Mobil */
 @media only screen and (max-width: 767px) {

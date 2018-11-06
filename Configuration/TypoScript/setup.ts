@@ -772,6 +772,21 @@ config {
 	config.absRefPrefix = http://{$config.domainDEV}/
 [global]
 
+## Sprachcondition
+/*
+[siteLanguage("languageId") == "1"]
+	plugin.tx_indexedsearch {
+		settings {
+			blind {
+				languageUid = 1
+			}
+			defaultOptions {
+				languageUid = 1
+			}
+		}
+	}
+[global]
+*/
 
 @import 'EXT:sitepackage/Configuration/TypoScript/plugins.ts'
 

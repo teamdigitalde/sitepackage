@@ -222,6 +222,20 @@ body {
         list-style: none;
     }
     /* ENDE flux - Tabs */
+    .schwarzTransparenterHintergrund {
+        position: absolute;
+        width: 0;
+        height: 100%;
+        background: rgba(0,0,0,0);
+        z-index: 9999;
+        .transition2(width .5s, background .5s);
+
+        &.active {
+            width: 100%;
+            background: rgba(0,0,0,.7);
+            .transition2(width .5s, background .5s);
+        }
+    }
 }
 
 /* Mobil */

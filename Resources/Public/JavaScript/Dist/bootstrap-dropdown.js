@@ -17,8 +17,10 @@ $(document).ready(function() {
     jQuery(".navbar-toggler").click(function() {
         if(!jQuery(".row-offcanvas-right").hasClass("active")) {
             jQuery(".row-offcanvas-right").addClass("active");
+			jQuery(".schwarzTransparenterHintergrund").addClass("active");
         } else {
             jQuery(".row-offcanvas-right").removeClass("active");
+			jQuery(".schwarzTransparenterHintergrund").removeClass("active");
         }
     });
     $( '.mobileToggleDropdown' ).on( 'click', function ( e ) {

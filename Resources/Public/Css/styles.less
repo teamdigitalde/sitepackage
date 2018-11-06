@@ -240,41 +240,44 @@ body {
         margin: 10px 0;
         width: 100%;
     }
-    table {
-        thead {
-            display: none;
-        }
-        tbody {
+    body {
+        table.contenttable {
+            thead {
+                display: none;
+            }
+            tbody {
 
-            tr {
-                float: left;
-                width: 100%;
-                margin-bottom: 2em;
-
-                td {
+                tr {
                     float: left;
                     width: 100%;
-                    padding: 1em;
-                    overflow: hidden;
-                    display: flex;
+                    margin-bottom: 2em;
 
-                    .responsive-table_left-content {
-                        flex: 0 0 40%;
+                    td {
+                        float: left;
+                        width: 100%;
+                        padding: 0;
+                        overflow: hidden;
+                        display: flex;
 
-                        &::before {
-                            content: attr(data-label);
+                        .responsive-table_left-content {
+                            flex: 0 0 40%;
                             background: #eee;
                             border-right: 2px solid black;
-                            width: 100%;
-                            float: left;
-                            padding: 1em;
-                            font-weight: bold;
-                            margin: -10px;
+
+                            &::before {
+                                content: attr(data-label);
+                                width: 100%;
+                                float: left;
+                                padding: 1em;
+                                font-weight: bold;
+                                margin: -10px;
+                            }
                         }
-                    }
-                    .responsive-table_right-content {
-                        flex: 0 0 60%;
-                        overflow: hidden;
+                        .responsive-table_right-content {
+                            flex: 0 0 60%;
+                            overflow: hidden;
+                            padding-left: 5px;
+                        }
                     }
                 }
             }

@@ -11476,37 +11476,38 @@ body .nav.nav-tabs > li {
     margin: 10px 0;
     width: 100%;
   }
-  table thead {
+  body table.contenttable thead {
     display: none;
   }
-  table tbody tr {
+  body table.contenttable tbody tr {
     float: left;
     width: 100%;
     margin-bottom: 2em;
   }
-  table tbody tr td {
+  body table.contenttable tbody tr td {
     float: left;
     width: 100%;
-    padding: 1em;
+    padding: 0;
     overflow: hidden;
     display: flex;
   }
-  table tbody tr td .responsive-table_left-content {
+  body table.contenttable tbody tr td .responsive-table_left-content {
     flex: 0 0 40%;
-  }
-  table tbody tr td .responsive-table_left-content::before {
-    content: attr(data-label);
     background: #eee;
     border-right: 2px solid black;
+  }
+  body table.contenttable tbody tr td .responsive-table_left-content::before {
+    content: attr(data-label);
     width: 100%;
     float: left;
     padding: 1em;
     font-weight: bold;
     margin: -10px;
   }
-  table tbody tr td .responsive-table_right-content {
+  body table.contenttable tbody tr td .responsive-table_right-content {
     flex: 0 0 60%;
     overflow: hidden;
+    padding-left: 5px;
   }
   /* Kontaktformular ENDE */
 }

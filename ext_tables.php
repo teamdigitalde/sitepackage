@@ -11,3 +11,8 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
     'Configuration/TypoScript',
     'sitepackage'
 );
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    $_EXTKEY,
+    'Configuration/TypoScript',
+    'sitepackage'
+);

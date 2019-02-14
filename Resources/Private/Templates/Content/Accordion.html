@@ -22,17 +22,17 @@
     </f:section>
     
     <f:section name="Main">
-        <div id="collapsible-{record.uid}" class="panel-group">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
+        <div id="accordion-{record.uid}">
+            <div class="card">
+                <div id="" class="card-header" id="head-{record.uid}">
                     <h4 class="panel-title">
-                        <a href="" class="accordion-toggle collapsed" href="/collapse-{record.uid}" data-target="#collapse-{record.uid}" data-toggle="collapse" data-parent="#collapsible-{record.uid}" aria-expanded="false">
+                        <a href="" class="accordion-toggle collapsed" href="/collapse-{record.uid}" data-target="#collapse-{record.uid}" data-toggle="collapse" aria-expanded="false">
                             {Titel}
                         </a>
                     </h4>
                 </div>
-                <div class="panel-collapse collapse" id="collapse-{record.uid}">
-                    <div class="panel-body">
+                <div class="collapse" id="collapse-{record.uid}" data-parent="#content" aria-labelledby="head-{record.uid}">
+                    <div class="card-body">
                         <flux:content.render area="0"/>
                     </div>
                 </div>

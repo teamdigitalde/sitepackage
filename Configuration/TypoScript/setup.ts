@@ -793,3 +793,10 @@ config {
 ## Pfad zur YAML Configuration der EXT:form
 plugin.tx_form.settings.yamlConfigurations.100 = EXT:sitepackage/Configuration/Yaml/BaseSetup.yaml
 module.tx_form.settings.yamlConfigurations.100 = EXT:sitepackage/Configuration/Yaml/BaseSetup.yaml
+
+lib.contentElement.settings.media.popup {
+	linkParams.ATagParams.dataWrap = class="magnificLink" title="{file:current:title}" data-gallery="gallery-{field:uid}"
+	directImageLink = 1
+	JSwindow = 0
+	wrap >
+}

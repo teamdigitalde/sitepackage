@@ -566,7 +566,6 @@ alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Web
 
 	includeJSFooter {
 		magnificpopup = {$filepaths.scripts}Dist/magnific-popup.min.js
-		fancybox = {$filepaths.scripts}Dist/jquery.fancybox.pack.js
 		cookiebar = {$filepaths.scripts}Src/jquery.cookiebar.js
 		main = {$filepaths.scripts}Src/main.js
 	}

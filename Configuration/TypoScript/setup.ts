@@ -457,8 +457,8 @@ page {
 			if.isTrue = {$meta.geo.active}
 		}
 
-		5220 < lib.hreflang
-		5230 < lib.canonical
+		#5220 < lib.hreflang
+		#5230 < lib.canonical
 		# Integrate Google Analytics Tracking
 		5300 = COA
 		5300 {

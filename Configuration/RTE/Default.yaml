@@ -65,6 +65,26 @@ editor:
       - Blockquote
       - JustifyBlock
 
+classesAnchor:
+
+  externalLink:
+    class: 'external-link'
+    type: 'url'
+
+  downloadLink:
+    class: 'download-link'
+    type: 'file'
+
+  mailLink:
+    class: 'mail-link'
+    type: 'mail'
+
+  buttons:
+    link:
+      properties:
+        class:
+          allowedClasses: 'external-link,download-link,mail-link'
+		  
 # Allow s and u tag
 processing:
   allowTags:

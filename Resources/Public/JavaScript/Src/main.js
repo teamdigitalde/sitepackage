@@ -175,7 +175,7 @@ jQuery('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
     preloader: false,
     fixedContentPos: false
 });
-$('.magnificGallery').each(function() { // the containers for all your galleries
+$('.ce-gallery.magnificGallery').each(function() { // the containers for all your galleries
     $(this).magnificPopup({
         delegate: 'a',
         type: 'image',

@@ -55,11 +55,11 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['FluidTYPO3\\Flux\\Form\\Field\\Te
 // Tabs
 \FluidTYPO3\Flux\Core::registerTemplateAsContentType(
     'TeamDigital.sitepackage',
-    'EXT:sitepackage/Resources/Private/Templates/Content/Tabs_Container.html'
+    'EXT:sitepackage/Resources/Private/Templates/Content/TabsContainer.html'
 );
 \FluidTYPO3\Flux\Core::registerTemplateAsContentType(
     'TeamDigital.sitepackage',
-    'EXT:sitepackage/Resources/Private/Templates/Content/Tabs_Item.html'
+    'EXT:sitepackage/Resources/Private/Templates/Content/TabsItem.html'
 );
 
 // Customcontent

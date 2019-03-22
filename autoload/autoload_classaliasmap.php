@@ -1,9 +1,9 @@
 <?php
 return array (
-    'aliasToClassNameMapping' =>
-        array (
-        ),
-    'classNameToAliasMapping' =>
-        array (
-        ),
+  'aliasToClassNameMapping' => 
+  array (
+  ),
+  'classNameToAliasMapping' => 
+  array (
+  ),
 );

@@ -386,6 +386,14 @@ RewriteRule ^.*(\.sql)$ - [F]
 #RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
 #RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
+# Multidomain Weiterleitungen
+#RewriteCond %{HTTP_HOST} ^pflegestuetzpunkt-vogelsbergkreis\.de$ [NC]
+#RewriteRule ^(.*)$ https://www.pflegestuetzpunkt-vogelsbergkreis.de/$1 [R=301,L]
+
+#RewriteCond %{HTTP_HOST} ^weiterbildungsverbund-vogelsbergkreis\.de$ [NC]
+#RewriteRule ^(.*)$ https://www.weiterbildungsverbund-vogelsbergkreis.de/$1 [R=301,L]
+
+
 # rewrite dd_googlesitemap
 RewriteRule ^sitemap.xml$ /index.php?eID=dd_googlesitemap [L]
 </IfModule>

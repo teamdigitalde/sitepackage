@@ -112,7 +112,7 @@ classesAnchor:
   internalLink:
     class: 'internal-link'
     type: 'page'
-		  
+ 
 # Allow s and u tag
 processing:
   allowTags:

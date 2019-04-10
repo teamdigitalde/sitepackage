@@ -359,6 +359,8 @@ page {
 
 	// HeaderData
 	headerData {
+		2 = TEXT
+		2.value = <meta name="format-detection" content="telephone=no">
 		5 = COA
 		5 {
 			// Apple touch icons
@@ -576,6 +578,7 @@ alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Web
 		description.field = description
 		author.field = author
 		keywords.field = keywords
+
 		viewport = width=device-width, initial-scale=1.0
 		robots = INDEX,FOLLOW,NOODP
 		google-site-verification.cObject = TEXT

@@ -10,7 +10,7 @@ editor:
   config:
     # Den Parameter 1 immer hochsetzen, wenn sich in der rte.css etwas ändert.
     contentsCss: "EXT:sitepackage/Resources/Public/Css/rte.css?1"
-	width: "900px"
+    width: "900px"
     resize_enabled: true
     resize_dir: 'both'
     resize_maxWidth: 1200

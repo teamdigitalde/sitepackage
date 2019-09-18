@@ -30,21 +30,25 @@
     <f:section name="Main">
         <f:if condition="{backgroundimage}">
             <f:then>
-                <div class="row gridelement fontWhite imageContainerBackground fullWidth" style="background-image:url('/{backgroundfile}')" {f:if(condition: '{record.space_before_class} || {record.space_after_class}', then: 'style="{f:if(condition: "{record.space_before_class}", then: "padding-top: {record.space_before_class}px;")}
+                <div class="fontWhite imageContainerBackground fullWidth" style="background-image:url('/{backgroundfile}')" {f:if(condition: '{record.space_before_class} || {record.space_after_class}', then: 'style="{f:if(condition: "{record.space_before_class}", then: "padding-top: {record.space_before_class}px;")}
                 {f:if(condition: "{record.space_after_class}", then: "padding-bottom: {record.space_after_class}px;")}"')}>
                     <div class="container">
-                        <div class="col-xl-12 column1">
-                            <flux:content.render area="0"/>
+                        <div class="row">
+                            <div class="col-xl-12 column1">
+                                <flux:content.render area="0"/>
+                            </div>
                         </div>
                     </div>
                 </div>
             </f:then>
             <f:else>
-                <div class="row gridelement {Hintergrundfarbe} fullWidth" {f:if(condition: '{record.space_before_class} || {record.space_after_class}', then: 'style="{f:if(condition: "{record.space_before_class}", then: "padding-top: {record.space_before_class}px;")}
+                <div class="{Hintergrundfarbe} fullWidth" {f:if(condition: '{record.space_before_class} || {record.space_after_class}', then: 'style="{f:if(condition: "{record.space_before_class}", then: "padding-top: {record.space_before_class}px;")}
                 {f:if(condition: "{record.space_after_class}", then: "padding-bottom: {record.space_after_class}px;")}"')}>
                     <div class="container">
-                        <div class="col-xl-12 column1">
-                            <flux:content.render area="0"/>
+                        <div class="row">
+                            <div class="col-xl-12 column1">
+                                <flux:content.render area="0"/>
+                            </div>
                         </div>
                     </div>
                 </div>

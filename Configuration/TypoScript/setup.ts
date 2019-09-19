@@ -5,7 +5,6 @@ lib.renderCE {
 	tables = tt_content
 }
 
-
 lib.contentElement.variables.10 = LOAD_REGISTER
 lib.contentElement.variables.10.content_uid = TEXT
 lib.contentElement.variables.10.content_uid.field = uid

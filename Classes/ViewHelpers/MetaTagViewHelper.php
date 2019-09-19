@@ -1,5 +1,5 @@
 <?php
-namespace TeamDigital\Akademieterms\ViewHelpers;
+namespace TeamDigital\Sitepackage\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;

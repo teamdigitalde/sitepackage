@@ -1,5 +1,8 @@
+{namespace si=TeamDigital\Sitepackage\ViewHelpers}
+
 <div class="schwarzTransparenterHintergrund"></div>
 <header class="container page-header">
+    
     <div class="toprow">
         <div id="logo">
             <f:link.page pageUid="1" title="Zurück zur Startseite">
@@ -17,7 +20,15 @@
 			</button>
 		</div>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<f:render partial="Page/Mainmenu" arguments="{_all}"/>
+            <f:if condition="{data.onepager} !== 1">
+            	<f:then>
+                    <f:render partial="Page/Mainmenu" arguments="{_all}"/>
+            	</f:then>
+                <f:else>
+                    <f:variable name="anchors" value="{si:anchor(pid: '{data.uid}')}"/>
+                    <f:render partial="Page/Anchormenu" arguments="{anchors:anchors}"/>
+                </f:else>
+            </f:if>
 		</div>
 	</nav>
 	<div class="row row-offcanvas row-offcanvas-right">

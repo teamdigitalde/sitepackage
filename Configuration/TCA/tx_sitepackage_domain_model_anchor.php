@@ -106,8 +106,8 @@ $GLOBALS['TCA']['tx_sitepackage_domain_model_anchor'] = array(
                 'items' => Array(
                     Array('', 0),
                 ),
-                'foreign_table' => 'tx_bootstrapslider_domain_model_bootstrapslider',
-                'foreign_table_where' => 'AND tx_bootstrapslider_domain_model_bootstrapslider.uid=###REC_FIELD_l10n_parent### AND tx_bootstrapslider_domain_model_bootstrapslider.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_sitepackage_domain_model_anchor',
+                'foreign_table_where' => 'AND tx_sitepackage_domain_model_anchor.uid=###REC_FIELD_l10n_parent### AND tx_sitepackage_domain_model_anchor.sys_language_uid IN (-1,0)',
             )
         ),
         'l10n_diffsource' => Array(

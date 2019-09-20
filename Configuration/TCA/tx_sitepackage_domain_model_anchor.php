@@ -117,7 +117,7 @@ $GLOBALS['TCA']['tx_sitepackage_domain_model_anchor'] = array(
         ),
         'name' => array(
             'exclude' => 0,
-            'label' => 'Überschrift',
+            'label' => 'Navigationstitel',
             'config' => array(
                 'type' => 'input',
                 'size' => '40',

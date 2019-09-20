@@ -36,9 +36,7 @@ class AnchorViewHelper extends AbstractViewHelper
 
     public function render()
     {
-        $pid = $this->arguments['pid'];
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($pid);
-        
+        $pid = $this->arguments['pid'];        
 
         $anchors = $this->anchorRepository->findByPid($pid);
 

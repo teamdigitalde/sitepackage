@@ -106,6 +106,12 @@ TCAdefaults {
 TCEMAIN.table.pages.disablePrependAtCopy = 1
 TCEMAIN.table.tt_content.disablePrependAtCopy = 1
 
+# Page TSConfig
+RTE.default.buttons.image.options.magic {
+    maxWidth = 1020  # Default: 300
+    maxHeight = 800  # Default: 1000
+}
+
 RTE.default.preset = sitepackage
 RTE.config.tt_content.bodytext.types.textmedia.preset = sitepackage
 RTE.config.tt_content.bodytext.types.textpic.preset = sitepackage

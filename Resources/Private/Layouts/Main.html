@@ -25,8 +25,8 @@
                     <f:render partial="Page/Mainmenu" arguments="{_all}"/>
             	</f:then>
                 <f:else>
-                    <f:variable name="anchors" value="{si:anchor(pid: '{data.uid}')}"/>
-                    <f:render partial="Page/Anchormenu" arguments="{anchors:anchors}"/>
+                     <f:variable name="anchors" value="{si:anchor(pid: '{f:if(condition: \'{data.opfrom}\', then: \'{data.opfrom}\', else: \'{data.uid}\')}')}"/>
+                        <f:render partial="Page/Anchormenu" arguments="{anchors:anchors}"/>
                 </f:else>
             </f:if>
 		</div>

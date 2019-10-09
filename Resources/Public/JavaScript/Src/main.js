@@ -3,10 +3,17 @@ window.onresize = function(event) {
     bodywidth = document.body.clientWidth;
 };
 /* Geschmeitigeres Scrollen von Anchorlinks */
-/*jQuery('a[href*=#]').on('click', function(event){
-	event.preventDefault();
-	jQuery('html,body').animate({scrollTop:jQuery(this.hash).offset().top}, 500);
-});*/
+/*
+jQuery('a[href*=#]').on('click', function(event){
+    var hash = jQuery(this.hash)['selector'];
+    if(jQuery(hash).length == 1) {
+        event.preventDefault();
+        if(!jQuery(this).hasClass('carousel-control-next') && !jQuery(this).hasClass('carousel-control-prev')) {
+            jQuery('html,body').animate({scrollTop:jQuery(this.hash).offset().top}, 500);
+        }
+    }
+});
+*/
 
 // Accordion Pfeile hoch / runter
 $(".accordion-toggle").addClass("collapsed");

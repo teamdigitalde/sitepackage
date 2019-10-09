@@ -21,16 +21,23 @@ call_user_func(function()
 $GLOBALS['TCA']['pages']['ctrl']['requestUpdate'] = 'onepager';
 $aNewFields = array(
     'onepager' => [
-       'exclude' => 1,
-       'onChange' => 'reload',
-       'label' => 'Seite als OnePager anzeigen?',
-       'config' => [
-          'type' => 'check',
-          'items' => [
-             ['Ja', 1],
-          ],
-          'cols' => '1',
-       ],
+        'exclude' => 1,
+        'onChange' => 'reload',
+        'label' => 'Seite als OnePager anzeigen?',
+        'config' => [
+            'type' => 'check',
+            'items' => [
+                ['Ja', 1],
+            ],
+            'cols' => '1',
+        ],
+    ],
+    'onepagerclass' => [
+    	'label' => 'Bodyclass',
+    	'config' => [
+    		'type' => 'input',
+    		//'renderType' => 'inputLink',
+    	],
     ],
     'opanchors' => array(
         'exclude' => 0,
@@ -67,6 +74,25 @@ $aNewFields = array(
             ),
         ),
     ),
+    'opfrom' => [
+        'label' => 'OPFROM',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectTree',
+            'foreign_table' => 'pages',
+            'size' => 20,
+            'maxitems' => 1,
+            'treeConfig' => [
+                'parentField' => 'pid',
+                'appearance' => [
+                    'expandAll' => true,
+                    'showHeader' => true,
+                ],
+            ],
+//            'foreign_table_where' => 'AND {#tx_styleguide_staticdata}.{#value_1} LIKE \'%foo%\' ORDER BY uid',
+//            'foreign_table_prefix' => 'A prefix: ',
+        ],
+    ],
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $aNewFields);
@@ -78,5 +104,5 @@ $aNewFields = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
     'pages',
-    '--div--;OnePager, onepager, opanchors'
+    '--div--;OnePager, onepager, opfrom, onepagerclass, opanchors'
 );

@@ -45,7 +45,9 @@ CREATE TABLE tx_sitepackage_domain_model_anchor (
 
 CREATE TABLE pages (
 	onepager int(11) DEFAULT '0' NOT NULL,
+	onepagerclass varchar(255) DEFAULT '' NOT NULL,
 	opanchors int(11) DEFAULT '0' NOT NULL,
+	opfrom varchar(255) DEFAULT '' NOT NULL,
 );
 
 -- CREATE TABLE tx_sitepackage_anchor_pages_mm (

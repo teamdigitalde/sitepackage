@@ -28,6 +28,12 @@ $('.collapse').on('shown.bs.collapse', function(){
 //    jQuery('.collapse').collapse('hide');
 //});
 
+// Beim öffnen das Accordions, wird das Accordion nach oben gescrollt.
+jQuery('.card-header').click(function() {
+    $('html,body').animate({
+        scrollTop: $(this).offset().top - jQuery('.page-header').height()
+    }, 500);
+});
 
 // tel: usw. auf dem Desktop nicht verlinken
 $('a[href^="tel:"], a[href^="fax:"], a[href^="sms:"]').click(function() {

@@ -30,9 +30,14 @@ $('.collapse').on('shown.bs.collapse', function(){
 
 // Beim öffnen das Accordions, wird das Accordion nach oben gescrollt.
 jQuery('.card-header').click(function() {
-    $('html,body').animate({
-        scrollTop: $(this).offset().top - jQuery('.page-header').height()
-    }, 500);
+    if(jQuery(this).hasClass('open')) {
+        jQuery(this).removeClass('open');
+    } else {
+        jQuery(this).addClass('open');
+        $('html,body').animate({
+            scrollTop: $(this).offset().top - jQuery('.page-header').height()
+        }, 500);
+    }
 });
 
 // tel: usw. auf dem Desktop nicht verlinken

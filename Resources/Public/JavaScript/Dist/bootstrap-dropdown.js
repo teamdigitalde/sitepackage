@@ -9,7 +9,7 @@ jQuery(window).resize(function() {
  */
 $(document).ready(function() {
     // executes when HTML-Document is loaded and DOM is ready
-    $(".navbar-nav").clone().appendTo("#sidebar");
+    // $(".navbar-nav").clone().appendTo("#sidebar");
     $(function() {
         $(document).trigger("enhance");
     });

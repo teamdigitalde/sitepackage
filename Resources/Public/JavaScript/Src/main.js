@@ -2,6 +2,13 @@ var bodywidth = document.body.clientWidth;
 window.onresize = function(event) {
     bodywidth = document.body.clientWidth;
 };
+jQuery(document).ready(function() {
+    jQuery('.drilldown').drilldown();
+});
+jQuery('span.nav-link').click(function(e) {
+    e.preventDefault();
+    window.location.assign(jQuery(this).attr('href'));
+});
 /* Geschmeitigeres Scrollen von Anchorlinks */
 /*
 jQuery('a[href*=#]').on('click', function(event){

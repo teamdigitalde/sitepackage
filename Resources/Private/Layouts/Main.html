@@ -2,7 +2,6 @@
 
 <div class="schwarzTransparenterHintergrund"></div>
 <header class="container page-header">
-    
     <div class="toprow">
         <div id="logo">
             <f:link.page pageUid="1" title="Zurück zur Startseite">
@@ -41,7 +40,11 @@
 					<span class="btm icon-bar"></span>
 				</button>
 			</div>
-			
+            <div class="drilldown">
+                <div class="drilldown-container">
+                    <f:render partial="Page/Mobilemenu" arguments="{_all}"/>
+                </div>
+            </div>
 		</nav>
 	</div>
 </header>

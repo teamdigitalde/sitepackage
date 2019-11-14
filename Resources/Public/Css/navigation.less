@@ -18,6 +18,16 @@
 	content: "";
 }*/
 body {
+    .drilldown-sub {
+        display: none;
+    }
+    .drilldown-back {
+        font-weight: bold;
+    }
+    .drilldown {
+        width: 100%;
+    }
+    
     .topmenu {
         .nav {
             justify-content: right;
@@ -67,7 +77,7 @@ body {
             padding-bottom: 16px;
         }
     }
-    .dropdown-menu {
+    .drilldown-sub {
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -172,25 +182,25 @@ body {
         .row-offcanvas {
             display: none;
         }
-        .dropdown-menu {
+        .drilldown-sub {
             min-width: 13rem;
         }
         .dropdown-toggle::after {
             display: none;
         }
         /* Hover-Menu */
-        .level1:hover > .dropdown-menu {
+        .level1:hover > .drilldown-sub {
             display: block;
         }
-        .level2:hover > .dropdown-menu {
+        .level2:hover > .drilldown-sub {
             display: block;
         }
-        .dropdown-menu {
+        .drilldown-sub {
             top: 95%;
         }
         .level1 {
-            .dropdown-menu{
-                .dropdown-menu {
+            .drilldown-sub{
+                .drilldown-sub {
                     left: 100%;
                     top: -3px;
                 }
@@ -199,10 +209,10 @@ body {
         .level1, .level2 {
             position: relative;
         }
-        .dropdown-menu {
+        .drilldown-sub {
             background-color: rgba(0,153,0,.9);
         }
-        .dropdown-menu{
+        .drilldown-sub{
             a {
                 color: #fff;
             }
@@ -233,17 +243,31 @@ body {
             border: 1px solid #e7e7e7;
         }
         #sidebar {
-            .nav-link {
-                color: rgba(0, 0, 0, .6);
-            }
-        }
-        #sidebar {
             padding-left: 0;
             padding-right: 0;
             width: 100%;
 
             .nav {
                 width: 100%;
+            }
+            .nav-link {
+                color: rgba(0, 0, 0, .6);
+            }
+            .drilldown-root {
+                padding-left: 0;
+                list-style: none;
+            }
+            .drilldowntoggle {
+                position: absolute;
+                text-indent: 999999px;
+                max-width: 50px;
+                right: 0;
+                top: 0;
+                height: 100%;
+                background: url('/typo3conf/ext/sitepackage/Resources/Public/Images/sub-next.png') no-repeat;
+                background-position: center center;
+                border-left: 1px solid rgba(231, 231, 231, 0.7);
+                cursor: pointer;
             }
             .nav-item {
                 padding-left: 5px;
@@ -252,26 +276,48 @@ body {
                     color: rgba(0, 0, 0, 1);
                 }
             }
-            .level1.nav-item {
+            .nav-item.nav-item {
                 border-bottom: 1px solid rgba(231, 231, 231, .7);
             }
             .nav-item.active {
                 background: #e7e7e7;
             }
-            .dropdown-menu {
-                .level2 {
-                    padding-left: 20px;
-                }
-                .level4 {
-                    padding-left: 20px;
-                }
-                .level3{
-                    .nav-link {
-                        padding-left: 15px;
+            .drilldown-sub {
+                //.level2 {
+                //    padding-left: 20px;
+                //}
+                //.level4 {
+                //    padding-left: 20px;
+                //}
+                //.level3{
+                //    .nav-link {
+                //        padding-left: 15px;
+                //    }
+                //}
+            }
+            span.nav-link {
+                cursor: pointer;
+            }
+            .drilldown-back {
+                .nav-link {
+                    padding-left: 25px;
+                    position: relative;
+                    
+                    &::before {
+                        content: '';
+                        transform: rotate(180deg);
+                        background: url(/typo3conf/ext/sitepackage/Resources/Public/Images/sub-next.png) no-repeat;
+                        background-size: 15px;
+                        width: 15px;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background-position: center center;
                     }
                 }
             }
-            .dropdown-menu.show {
+            .drilldown-sub.show {
                 background: transparent;
                 border: 0;
             }

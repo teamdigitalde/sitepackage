@@ -10835,6 +10835,15 @@ body {
 	*/
   /* ENDE Sprachmenu / Language */
 }
+body .drilldown-sub {
+  display: none;
+}
+body .drilldown-back {
+  font-weight: bold;
+}
+body .drilldown {
+  width: 100%;
+}
 body .topmenu .nav {
   justify-content: right;
 }
@@ -10870,7 +10879,7 @@ body .navbar-nav .nav-link {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-body .dropdown-menu {
+body .drilldown-sub {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -10958,22 +10967,22 @@ body .toprow > div {
   body .row-offcanvas {
     display: none;
   }
-  body .dropdown-menu {
+  body .drilldown-sub {
     min-width: 13rem;
   }
   body .dropdown-toggle::after {
     display: none;
   }
-  body .level1:hover > .dropdown-menu {
+  body .level1:hover > .drilldown-sub {
     display: block;
   }
-  body .level2:hover > .dropdown-menu {
+  body .level2:hover > .drilldown-sub {
     display: block;
   }
-  body .dropdown-menu {
+  body .drilldown-sub {
     top: 95%;
   }
-  body .level1 .dropdown-menu .dropdown-menu {
+  body .level1 .drilldown-sub .drilldown-sub {
     left: 100%;
     top: -3px;
   }
@@ -10981,10 +10990,10 @@ body .toprow > div {
   body .level2 {
     position: relative;
   }
-  body .dropdown-menu {
+  body .drilldown-sub {
     background-color: rgba(0, 153, 0, 0.9);
   }
-  body .dropdown-menu a {
+  body .drilldown-sub a {
     color: #fff;
   }
 }
@@ -11015,9 +11024,6 @@ body .toprow > div {
     width: 75%;
     border: 1px solid #e7e7e7;
   }
-  body #sidebar .nav-link {
-    color: rgba(0, 0, 0, 0.6);
-  }
   body #sidebar {
     padding-left: 0;
     padding-right: 0;
@@ -11026,6 +11032,25 @@ body .toprow > div {
   body #sidebar .nav {
     width: 100%;
   }
+  body #sidebar .nav-link {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  body #sidebar .drilldown-root {
+    padding-left: 0;
+    list-style: none;
+  }
+  body #sidebar .drilldowntoggle {
+    position: absolute;
+    text-indent: 999999px;
+    max-width: 50px;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: url('/typo3conf/ext/sitepackage/Resources/Public/Images/sub-next.png') no-repeat;
+    background-position: center center;
+    border-left: 1px solid rgba(231, 231, 231, 0.7);
+    cursor: pointer;
+  }
   body #sidebar .nav-item {
     padding-left: 5px;
   }
@@ -11033,22 +11058,32 @@ body .toprow > div {
   body #sidebar .nav-item .nav-item.active {
     color: #000000;
   }
-  body #sidebar .level1.nav-item {
+  body #sidebar .nav-item.nav-item {
     border-bottom: 1px solid rgba(231, 231, 231, 0.7);
   }
   body #sidebar .nav-item.active {
     background: #e7e7e7;
   }
-  body #sidebar .dropdown-menu .level2 {
-    padding-left: 20px;
+  body #sidebar span.nav-link {
+    cursor: pointer;
   }
-  body #sidebar .dropdown-menu .level4 {
-    padding-left: 20px;
+  body #sidebar .drilldown-back .nav-link {
+    padding-left: 25px;
+    position: relative;
   }
-  body #sidebar .dropdown-menu .level3 .nav-link {
-    padding-left: 15px;
+  body #sidebar .drilldown-back .nav-link::before {
+    content: '';
+    transform: rotate(180deg);
+    background: url(/typo3conf/ext/sitepackage/Resources/Public/Images/sub-next.png) no-repeat;
+    background-size: 15px;
+    width: 15px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: center center;
   }
-  body #sidebar .dropdown-menu.show {
+  body #sidebar .drilldown-sub.show {
     background: transparent;
     border: 0;
   }
@@ -11325,6 +11360,13 @@ body .kleiner {
 }
 body .groesser-125 {
   font-size: 1.25em;
+}
+body img {
+  max-width: 100%;
+  height: auto;
+}
+body .btn-group > .btn:first-child {
+  margin-left: 198px;
 }
 body .groesser-150 {
   font-size: 1.5em;

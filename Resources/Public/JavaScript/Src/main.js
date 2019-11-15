@@ -22,6 +22,19 @@ jQuery('a[href*=#]').on('click', function(event){
 });
 */
 
+jQuery(document).ready(function() {
+	if(bodywidth <= 1100) {
+		var regex= //(\+[0-9]+)?\ ?(\(\d\))?\ ?(\d{1,})\ ?\/?\ ?(\d{1,})\ ?\-?\ ?(\d{1,})/g;
+
+        jQuery('p,li').each(function() {
+            var text = $(this).html();
+
+            text = text.replace(regex, "<a href=\'tel:$1\$3\$4\$5\'>$&</a>");
+            $(this).html(text);
+        });
+	}
+});
+
 // Accordion Pfeile hoch / runter
 $(".accordion-toggle").addClass("collapsed");
 $('.collapse').on('shown.bs.collapse', function(){

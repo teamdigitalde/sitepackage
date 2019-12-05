@@ -15,11 +15,7 @@ languages:
     direction: ''
     flag: de
 errorHandling: {  }
-#routes:
-#  -
-#    route: sitemap.xml
-#    type: uri
-#    source: 'https://www.DEINEDOMAIN.de/?type=1533906435'
+routes: {  }
 #routeEnhancers:
 #  PageTypeSuffix:
 #    type: PageType

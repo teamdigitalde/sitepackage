@@ -27,7 +27,7 @@ body {
     .drilldown {
         width: 100%;
     }
-    
+
     .topmenu {
         .nav {
             justify-content: right;
@@ -169,60 +169,60 @@ body {
     .toprow > div {
         flex: 0 0 50%;
     }
-    /* ENDE Sprachmenu / Language */    
+    /* ENDE Sprachmenu / Language */
 
 	.sidebar {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 		margin-top: 4.4em;
-		}
+
 		.sidebarmenu {
-			background: rgba(@mes-blau, .1);
+			background: rgba(@sidebarmenu, .1);
 			background-position: bottom;
 			background-size: 100%;
-			border-top: 1px solid @mes-blau;
-			border-bottom: 1px solid @mes-blau;
+			border-top: 1px solid @sidebarmenu;
+			border-bottom: 1px solid @sidebarmenu;
 			padding-top: 0px;
 			margin-bottom: 20px;
 			/*max-width: 270px;*/
 			width: 100%;
 			font-size: .95em;
 			a {
-				color: @mes-blau;
+				color: @dunkelgrau;
 				display: block;
 				padding: .5em 0;
 				transition: all .3s;
 				&:focus, &:hover, &:active, &.is-current {
-					color: @mes-blau;
+					color: @sidebarmenu;
 					text-decoration: none;
 					padding-left: .25em;
 					font-weight: 600;
 				}
 				&.is-current {
 					font-style: oblique;
-				}		
+				}
 			}
 			ul {
 				padding: 0 .5em;
 				margin-bottom: .1em;
 				ul li {
-					border-top: 0px solid rgba(@mes-blau, .1);
+					border-top: 0px solid rgba(@sidebarmenu, .4);
 				}
 			}
 			li {
 				display: block;
-				border-top: 1px solid rgba(@mes-blau, .1);
+				border-top: 1px solid rgba(@sidebarmenu, .4);
 				&:first-child {
 					border:0;
 				}
 				li:first-child {
-					border-top: 0px solid rgba(@mes-blau, .1);
+					border-top: 0px solid rgba(@sidebarmenu, .4);
 				}
 				li{
 					a{
 						&:focus, &:hover, &:active, &.is-current {
-							color: @mes-hellblau;
+							color: @sidebarmenu;
 							text-decoration: none;
 							padding-left: .25em;
 							font-weight: 600;
@@ -373,7 +373,7 @@ body {
                 .nav-link {
                     padding-left: 25px;
                     position: relative;
-                    
+
                     &::before {
                         content: '';
                         transform: rotate(180deg);

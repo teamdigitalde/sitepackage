@@ -259,3 +259,16 @@ jQuery(window).load(function() {
         });
     });
 });
+
+jQuery(window).load(function() {
+    jQuery('.sidebar-offcanvas a').click(function (e) {
+        var link = jQuery(this).attr('href');
+        if (this.hash) {
+            e.preventDefault();
+            window.location.href = link;
+            jQuery('.closeToggle .navbar-toggler').click();
+        } else {
+            console.log('no anchor');
+        }
+    });
+});

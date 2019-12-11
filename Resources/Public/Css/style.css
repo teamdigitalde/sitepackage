@@ -10955,6 +10955,79 @@ body .toprow {
 body .toprow > div {
   flex: 0 0 50%;
 }
+body .sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 4.4em;
+}
+body .sidebar .sidebarmenu {
+  background: rgba(233, 236, 239, 0.1);
+  background-position: bottom;
+  background-size: 100%;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  padding-top: 0px;
+  margin-bottom: 20px;
+  /*max-width: 270px;*/
+  width: 100%;
+  font-size: 0.95em;
+}
+body .sidebar .sidebarmenu a {
+  color: #555;
+  display: block;
+  padding: 0.5em 0;
+  transition: all 0.3s;
+}
+body .sidebar .sidebarmenu a:focus,
+body .sidebar .sidebarmenu a:hover,
+body .sidebar .sidebarmenu a:active,
+body .sidebar .sidebarmenu a.is-current {
+  color: #e9ecef;
+  text-decoration: none;
+  padding-left: 0.25em;
+  font-weight: 600;
+}
+body .sidebar .sidebarmenu a.is-current {
+  font-style: oblique;
+}
+body .sidebar .sidebarmenu ul {
+  padding: 0 0.5em;
+  margin-bottom: 0.1em;
+}
+body .sidebar .sidebarmenu ul ul li {
+  border-top: 0px solid rgba(233, 236, 239, 0.4);
+}
+body .sidebar .sidebarmenu li {
+  display: block;
+  border-top: 1px solid rgba(233, 236, 239, 0.4);
+}
+body .sidebar .sidebarmenu li:first-child {
+  border: 0;
+}
+body .sidebar .sidebarmenu li li:first-child {
+  border-top: 0px solid rgba(233, 236, 239, 0.4);
+}
+body .sidebar .sidebarmenu li li a:focus,
+body .sidebar .sidebarmenu li li a:hover,
+body .sidebar .sidebarmenu li li a:active,
+body .sidebar .sidebarmenu li li a.is-current {
+  color: #e9ecef;
+  text-decoration: none;
+  padding-left: 0.25em;
+  font-weight: 600;
+}
+body .sidebar .sidebarmenu a::before {
+  content: '-';
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+body .sidebar .sidebarmenu .is-current::before,
+body .sidebar .sidebarmenu a:hover::before {
+  content: '-';
+  opacity: 1;
+  transition: opacity 0.5s;
+}
 /* Offcanvas Menu */
 /*
  * Off Canvas

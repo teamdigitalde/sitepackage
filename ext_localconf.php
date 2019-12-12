@@ -71,4 +71,4 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['FluidTYPO3\\Flux\\Form\\Field\\Te
 /**
  * Add custom PageTypeDecorator
  */
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['routing']['enhancers']['CustomPageType'] = \TeamDigital\Stireferences\Routing\CustomPageTypeDecorator::class;
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['routing']['enhancers']['CustomPageType'] = \TeamDigital\Sitepackage\Routing\CustomPageTypeDecorator::class;

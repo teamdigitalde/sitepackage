@@ -67,3 +67,8 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['FluidTYPO3\\Flux\\Form\\Field\\Te
     'TeamDigital.sitepackage',
     'EXT:sitepackage/Resources/Private/Templates/Content/Youtube.html'
 );
+
+/**
+ * Add custom PageTypeDecorator
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['routing']['enhancers']['CustomPageType'] = \TeamDigital\Stireferences\Routing\CustomPageTypeDecorator::class;

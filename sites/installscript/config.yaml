@@ -18,11 +18,11 @@ errorHandling: {  }
 routes: {  }
 #routeEnhancers:
 #  PageTypeSuffix:
-#    type: PageType
-#    default: .html
+#    type: CustomPageType
+#    default: '.html'
+#    index: 'index'
 #    map:
-#      .html: 0
-#      sitemap.xml: 1533906435
+#      '.html': 0
 #  NewsPlugin:
 #    type: Extbase
 #    limitToPages: [33]

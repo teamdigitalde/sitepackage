@@ -17,3 +17,5 @@ defined('TYPO3_MODE') || die();
     'Configuration/TypoScript',
     'sitepackage'
 );
+
+$GLOBALS['TCA']['pages']['columns']['slug']['config']['generatorOptions']['fields'][0] = 'nav_title,title';

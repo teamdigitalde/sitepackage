@@ -6,7 +6,10 @@ $typo3InstallDir = \TYPO3\CMS\Core\Core\Environment::getPublicPath() . '/';
 
 return array(
     'FluidTYPO3\\Flux\\' => array($typo3InstallDir . 'typo3conf/ext/flux/Classes'),
+    'FluidTYPO3\\Vhs\\' => array($typo3InstallDir . 'typo3conf/ext/vhs/Classes'),
     'Netresearch\\RteCKEditorImage\\' => array($typo3InstallDir . 'typo3conf/ext/rte_ckeditor_image/Classes'),
     'T3\\Dce\\' => array($typo3InstallDir . 'typo3conf/ext/dce/Classes'),
+    'TeamDigital\\Bootstrapslider\\' => array($typo3InstallDir . 'typo3conf/ext/bootstrapslider/Classes'),
     'TeamDigital\\Sitepackage\\' => array($typo3InstallDir . 'typo3conf/ext/sitepackage/Classes'),
+    'TeamDigital\\Tdtemplate\\' => array($typo3InstallDir . 'typo3conf/ext/tdtemplate/Classes'),
 );

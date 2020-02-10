@@ -3,7 +3,7 @@
     <f:for each="{Mainmenu}" as="lvl1" iteration="i">
         <f:if condition="{CurrentLanguage} == {lvl1.data.sys_language_uid}">
             <li class="">
-                <a href="{f:uri.page(pageUid:lvl1.data.uid)}" id="{f:if(condition: '{lvl1.children}',then:'navbarDropdown')}" class="" title="{lvl1.data.title}">
+                <a {f:if(condition:'{lvl1.target} == "_blank"', then:"target=_blank")} href="{f:uri.page(pageUid:lvl1.data.uid)}" id="{f:if(condition: '{lvl1.children}',then:'navbarDropdown')}" class="" title="{lvl1.data.title}">
                     {f:if(condition: '{lvl1.data.nav_title}',then:'{lvl1.data.nav_title}',else:'{lvl1.data.title}')}
                 </a>
                 <!-- Zweite Ebene -->
@@ -12,7 +12,7 @@
                         <f:for each="{lvl1.children}" as="lvl2">
                             <f:if condition="{CurrentLanguage} == {lvl2.data.sys_language_uid}">
                                 <li class="">
-                                    <a id="{f:if(condition:'{lvl2.children}',then:'navbarDropdownMenu')}" class="" href="{f:uri.page(pageUid:lvl2.data.uid)}" title="{lvl2.data.title}">
+                                    <a {f:if(condition:'{lvl2.target} == "_blank"', then:"target=_blank")} id="{f:if(condition:'{lvl2.children}',then:'navbarDropdownMenu')}" class="" href="{f:uri.page(pageUid:lvl2.data.uid)}" title="{lvl2.data.title}">
                                         {f:if(condition: '{lvl2.data.nav_title}',then:'{lvl2.data.nav_title}',else:'{lvl2.data.title}')}
                                     </a>
                                     <!-- Dritte Ebene -->
@@ -21,7 +21,7 @@
                                             <f:for each="{lvl2.children}" as="lvl3">
                                                 <f:if condition="{CurrentLanguage} == {lvl1.data.sys_language_uid}">
                                                     <li class="">
-                                                        <a id="{f:if(condition:'{lvl3.children}',then:'navbarDropdownMenu')}" class="" href="{f:uri.page(pageUid:lvl3.data.uid)}" title="{lvl3.data.title}">
+                                                        <a {f:if(condition:'{lvl3.target} == "_blank"', then:"target=_blank")} id="{f:if(condition:'{lvl3.children}',then:'navbarDropdownMenu')}" class="" href="{f:uri.page(pageUid:lvl3.data.uid)}" title="{lvl3.data.title}">
                                                             {f:if(condition: '{lvl3.data.nav_title}',then:'{lvl3.data.nav_title}',else:'{lvl3.title}')}
                                                         </a>
                                                     </li>

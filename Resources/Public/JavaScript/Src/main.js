@@ -261,13 +261,14 @@ jQuery(window).load(function() {
 });
 
 jQuery(window).load(function() {
-    jQuery('.sidebar-offcanvas a').click(function (e) {
+    jQuery('.sidebar-offcanvas a, .sidebar-offcanvas span').click(function (e) {
         var link = jQuery(this).attr('href');
-        if (this.hash) {
+        if (this.hash || jQuery(this).is('span')) {
             e.preventDefault();
             window.location.href = link;
             jQuery('.closeToggle .navbar-toggler').click();
-        } else {
+        }
+        else {
             console.log('no anchor');
         }
     });

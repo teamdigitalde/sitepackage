@@ -75,7 +75,7 @@ $aNewFields = array(
         ),
     ),
     'opfrom' => [
-        'label' => 'OPFROM',
+        'label' => 'OnePager Menü von Seite',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectTree',

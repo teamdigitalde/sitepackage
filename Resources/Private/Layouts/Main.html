@@ -8,9 +8,11 @@
                 <f:image src="EXT:sitepackage/Resources/Public/Images/logo.png" width="250" alt="Logo" class="logo"></f:image>
             </f:link.page>
         </div>
-        <div class="topmenu">
-            <f:render partial="Page/Topmenu" arguments="{_all}"/>
-        </div>
+		<f:comment>
+			<div class="topmenu">
+				<f:render partial="Page/Topmenu" arguments="{_all}"/>
+			</div>
+		</f:comment>
     </div>
 	<nav class="navbar navbar-expand-lg" id="nav1">
 		<!-- Toggle get grouped for better mobile display -->

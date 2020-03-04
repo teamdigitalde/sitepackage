@@ -2,9 +2,9 @@
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
-    
+
     <f:layout name="Flux/Content"/>
-    
+
     <f:section name="Configuration">
         <flux:form id="TabsContainer" label="Äußerer Tab Container" description="Äußerer Tab Container" options="{group: 'Rasterelemente'}">
             <flux:form.option.icon value="EXT:sitepackage/Resources/Public/Images/Grids/grid_standard.png"/>
@@ -15,11 +15,11 @@
             </flux:grid>
         </flux:form>
     </f:section>
-    
+
     <f:section name="Preview">
         <b>Tab Container</b>
     </f:section>
-    
+
     <f:section name="Main">
         <div class="TabContainer">
             <ul class="nav nav-tabs" role="tablist">
@@ -27,14 +27,14 @@
                     <f:for each="{item}" as="i" iteration="iterator">
                         <f:if condition="{iterator.isFirst}">
                             <f:then>
-                                <li class="active">
+                                <li class="nav-item" id="c{i.uid}">
                                     <a href="#tab-content-{i.uid}" class="nav-link active" data-toggle="tab" role="tab" aria-selected="true">
                                         {i.header}
                                     </a>
                                 </li>
                             </f:then>
                             <f:else>
-                                <li id="c{i.uid}">
+                                <li class="nav-item" id="c{i.uid}">
                                     <a href="#tab-content-{i.uid}" class="nav-link" data-toggle="tab" role="tab" aria-selected="false">
                                         {i.header}
                                     </a>
@@ -70,7 +70,7 @@
                 <div class="tab-content">
                     <flux:content.render area="0"/>
                 </div>
-                
+
             </f:comment>
         </div>
     </f:section>

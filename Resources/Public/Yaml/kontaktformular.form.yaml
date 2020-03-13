@@ -107,3 +107,20 @@ renderables:
         validators:
           -
             identifier: NotEmpty
+      -
+        type: Checkbox
+        identifier: checkbox-1
+        label: Einwilligung
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        label: 'Content element'
+        properties:
+          contentElementUid: '129'
+        type: ContentElement
+        identifier: contentelement-1

@@ -11508,6 +11508,13 @@ body .form-group .control-label {
   cursor: pointer;
   padding-top: 0.5em;
 }
+body .input.checkbox .form-check {
+  padding-left: 0;
+  margin-bottom: -15px;
+}
+body .input.checkbox .form-check input[type="checkbox"] {
+  margin-right: 15px;
+}
 body .input .form-control {
   width: 400px;
   padding: 6px 12px;

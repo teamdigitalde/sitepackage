@@ -11499,6 +11499,10 @@ body footer.pagefooter {
   line-height: 1em;
   font-size: 1em;
 }
+body img {
+  max-width: 100%;
+  height: auto;
+}
 body .form-group .control-label {
   display: block;
   width: 200px;

@@ -24,7 +24,7 @@ jQuery('a[href*=#]').on('click', function(event){
 
 jQuery(document).ready(function() {
 	if(bodywidth <= 1100) {
-		var regex= //(\+[0-9]+)?\ ?(\(\d\))?\ ?(\d{1,})\ ?\/?\ ?(\d{1,})\ ?\-?\ ?(\d{1,})/g;
+        var regex= /(\+[0-9]+)?\ ?(\(\d\))?\ ?(\d{1,})\ ?\/?\ ?(\d{1,})\ ?\-?\ ?(\d{1,})\ ?\-?\ ?(\d{1,})/g;
 
         jQuery('p,li').each(function() {
             var text = $(this).html();

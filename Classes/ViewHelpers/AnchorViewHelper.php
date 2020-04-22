@@ -2,7 +2,7 @@
 namespace TeamDigital\Sitepackage\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\DatabaseConnection;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class AnchorViewHelper extends AbstractViewHelper
 {
@@ -36,7 +36,7 @@ class AnchorViewHelper extends AbstractViewHelper
 
     public function render()
     {
-        $pid = $this->arguments['pid'];        
+        $pid = $this->arguments['pid'];
 
         $anchors = $this->anchorRepository->findByPid($pid);
 

@@ -543,7 +543,6 @@ alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Web
 	// includeCSS
 	includeCSS {
 		295 = {$filepaths.css}style.css
-		300 = {$filepaths.css}print.css
 		300.media = print
 	}
 
@@ -753,10 +752,6 @@ config {
 		}
 	}
 
-	concatenateCss = 0
-	concatenateJs = 0
-	compressCss = 0
-	compressJs = 0
 	headerComment (
 ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 | TYPO3 Webdesign und Umsetzung by team digital GmbH - www.team-digital.de - Alle Rechte vorbehalten.  |
